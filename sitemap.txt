@@ -1,6 +1,8 @@
+http://example.com/2025/05/10/%E2%80%8BStep-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/
 http://example.com/about/index.html
 http://example.com/privacy-policy/index.html
 http://example.com/archives/index.html
 http://example.com/contact/index.html
 http://example.com/2025/05/10/hello-world/
 http://example.com/
+http://example.com/tags/CentOS-Python/
