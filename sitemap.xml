@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2025/05/10/%E2%80%8BStep-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/</loc>
+    <loc>https://gzthss.github.io/2025/05/10/%E2%80%8BStep-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/</loc>
     
     <lastmod>2025-05-10</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>https://gzthss.github.io/about/index.html</loc>
     
     <lastmod>2025-05-10</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/privacy-policy/index.html</loc>
+    <loc>https://gzthss.github.io/privacy-policy/index.html</loc>
     
     <lastmod>2025-05-10</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/archives/index.html</loc>
+    <loc>https://gzthss.github.io/archives/index.html</loc>
     
     <lastmod>2025-05-10</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/contact/index.html</loc>
+    <loc>https://gzthss.github.io/contact/index.html</loc>
     
     <lastmod>2025-05-10</lastmod>
     
@@ -48,7 +48,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://gzthss.github.io/</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -56,7 +56,7 @@
 
   
   <url>
-    <loc>http://example.com/tags/CentOS-Python/</loc>
+    <loc>https://gzthss.github.io/tags/CentOS-Python/</loc>
     <lastmod>2025-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
