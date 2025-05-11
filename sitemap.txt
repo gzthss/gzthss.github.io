@@ -3,6 +3,5 @@ http://example.com/about/index.html
 http://example.com/privacy-policy/index.html
 http://example.com/archives/index.html
 http://example.com/contact/index.html
-http://example.com/2025/05/10/hello-world/
 http://example.com/
 http://example.com/tags/CentOS-Python/
