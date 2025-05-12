@@ -1,7 +1,13 @@
+https://gzthss.github.io/2025/05/11/how_to_use_images_in_hexo/
 https://gzthss.github.io/2025/05/10/%E2%80%8BStep-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/
 https://gzthss.github.io/about/index.html
 https://gzthss.github.io/privacy-policy/index.html
 https://gzthss.github.io/archives/index.html
 https://gzthss.github.io/contact/index.html
 https://gzthss.github.io/
-https://gzthss.github.io/tags/CentOS-Python/
+https://gzthss.github.io/tags/hexo/
+https://gzthss.github.io/tags/blogging/
+https://gzthss.github.io/tags/images/
+https://gzthss.github.io/tags/tutorial/
+https://gzthss.github.io/tags/CentOS/
+https://gzthss.github.io/tags/Python/
