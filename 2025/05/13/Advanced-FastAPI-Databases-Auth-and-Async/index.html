@@ -28,7 +28,7 @@
 <meta property="og:description" content="Take your FastAPI skills further with database integration, secure JWT authentication, and async performance optimizations.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-13T14:27:29.118Z">
+<meta property="article:modified_time" content="2025-05-13T14:29:25.135Z">
 <meta property="article:author" content="GZTHSS">
 <meta property="article:tag" content="FastAPI">
 <meta property="article:tag" content="SQLAlchemy">
@@ -193,7 +193,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2025-05-13 00:00:00 / Modified: 22:27:29" itemprop="dateCreated datePublished" datetime="2025-05-13T00:00:00+08:00">2025-05-13</time>
+              <time title="Created: 2025-05-13 00:00:00 / Modified: 22:29:25" itemprop="dateCreated datePublished" datetime="2025-05-13T00:00:00+08:00">2025-05-13</time>
             </span>
 
           
@@ -222,7 +222,7 @@
 <h5 id="Step-3-Initialize-Database-Session"><a href="#Step-3-Initialize-Database-Session" class="headerlink" title="Step 3: Initialize Database Session"></a>Step 3: Initialize Database Session</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># database.py</span></span><br><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.orm <span class="keyword">import</span> sessionmaker</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to SQLite (use PostgreSQL or MySQL in production environments)</span></span><br><span class="line">SQLALCHEMY_DATABASE_URL = <span class="string">&quot;sqlite:///./app.db&quot;</span></span><br><span class="line">engine = create_engine(SQLALCHEMY_DATABASE_URL)</span><br><span class="line"></span><br><span class="line">SessionLocal = sessionmaker(autocommit=<span class="literal">False</span>, autoflush=<span class="literal">False</span>, bind=engine)</span><br></pre></td></tr></table></figure>
 <h5 id="Step-4-Inject-Session-into-Routes"><a href="#Step-4-Inject-Session-into-Routes" class="headerlink" title="Step 4: Inject Session into Routes"></a>Step 4: Inject Session into Routes</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> Depends</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.orm <span class="keyword">import</span> Session</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_db</span>():</span><br><span class="line">    db = SessionLocal()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">yield</span> db</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        db.close()  </span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/users/&#123;user_id&#125;&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">read_user</span>(<span class="params">user_id: <span class="built_in">int</span>, db: Session = Depends(<span class="params">get_db</span>)</span>):</span><br><span class="line">    user = db.query(User).<span class="built_in">filter</span>(User.<span class="built_in">id</span> == user_id).first()</span><br><span class="line">    <span class="keyword">return</span> user</span><br></pre></td></tr></table></figure>
 
-<p>In summary, mastering FastAPI’s advanced features—such as database integration, authentication, and asynchronous programming—empowers you to build robust, secure, and high-performance web APIs with ease.</p>
+<p>In summary, mastering FastAPI&#96;s advanced features—such as database integration, authentication, and asynchronous programming—empowers you to build robust, secure, and high-performance web APIs with ease.</p>
 
     </div>
 

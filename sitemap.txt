@@ -1,5 +1,5 @@
-https://gzthss.github.io/2025/05/12/Building-a-FastAPI-RESTful-API-from-Scratch/
 https://gzthss.github.io/2025/05/13/Advanced-FastAPI-Databases-Auth-and-Async/
+https://gzthss.github.io/2025/05/12/Building-a-FastAPI-RESTful-API-from-Scratch/
 https://gzthss.github.io/2025/05/10/%E2%80%8BStep-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/
 https://gzthss.github.io/about/index.html
 https://gzthss.github.io/privacy-policy/index.html
