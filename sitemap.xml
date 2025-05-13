@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gzthss.github.io/2023/10/01/Building-a-FastAPI-RESTful-API-from-Scratch/</loc>
+    <loc>https://gzthss.github.io/2025/05/12/Building-a-FastAPI-RESTful-API-from-Scratch/</loc>
     
-    <lastmod>2025-05-12</lastmod>
+    <lastmod>2025-05-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.github.io/2025/05/13/Advanced-FastAPI-Databases-Auth-and-Async/</loc>
+    
+    <lastmod>2025-05-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,36 +67,57 @@
 
   <url>
     <loc>https://gzthss.github.io/</loc>
-    <lastmod>2025-05-12</lastmod>
+    <lastmod>2025-05-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://gzthss.github.io/tags/CentOS/</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>https://gzthss.github.io/tags/FastAPI/</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.github.io/tags/SQLAlchemy/</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.github.io/tags/JWT/</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.github.io/tags/Async/</loc>
+    <lastmod>2025-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.github.io/tags/Python/</loc>
-    <lastmod>2025-05-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.github.io/tags/FastAPI/</loc>
-    <lastmod>2025-05-12</lastmod>
+    <lastmod>2025-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.github.io/tags/Backend/</loc>
-    <lastmod>2025-05-12</lastmod>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.github.io/tags/CentOS/</loc>
+    <lastmod>2025-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
