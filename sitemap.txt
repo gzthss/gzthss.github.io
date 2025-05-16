@@ -11,6 +11,6 @@ https://gzthss.github.io/tags/FastAPI/
 https://gzthss.github.io/tags/SQLAlchemy/
 https://gzthss.github.io/tags/JWT/
 https://gzthss.github.io/tags/Async/
-https://gzthss.github.io/tags/CentOS/
 https://gzthss.github.io/tags/Python/
 https://gzthss.github.io/tags/Backend/
+https://gzthss.github.io/tags/CentOS/
