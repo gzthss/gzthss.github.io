@@ -9,11 +9,11 @@ https://gzthss.github.io/archives/index.html
 https://gzthss.github.io/contact/index.html
 https://gzthss.github.io/
 https://gzthss.github.io/tags/FastAPI/
-https://gzthss.github.io/tags/SQLAlchemy/
-https://gzthss.github.io/tags/JWT/
 https://gzthss.github.io/tags/Async/
 https://gzthss.github.io/tags/httpx/
 https://gzthss.github.io/tags/asyncio/
 https://gzthss.github.io/tags/Python/
 https://gzthss.github.io/tags/Backend/
+https://gzthss.github.io/tags/SQLAlchemy/
+https://gzthss.github.io/tags/JWT/
 https://gzthss.github.io/tags/CentOS/
