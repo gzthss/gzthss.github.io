@@ -99,21 +99,21 @@
   </url>
   
   <url>
+    <loc>https://gzthss.github.io/tags/SQLAlchemy/</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.github.io/tags/JWT/</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://gzthss.github.io/tags/Async/</loc>
-    <lastmod>2025-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.github.io/tags/httpx/</loc>
-    <lastmod>2025-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.github.io/tags/asyncio/</loc>
     <lastmod>2025-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -134,14 +134,21 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/SQLAlchemy/</loc>
+    <loc>https://gzthss.github.io/tags/httpx/</loc>
     <lastmod>2025-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/JWT/</loc>
+    <loc>https://gzthss.github.io/tags/asyncio/</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.github.io/tags/Postgresql/</loc>
     <lastmod>2025-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
