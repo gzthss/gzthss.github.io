@@ -1,3 +1,4 @@
+https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/
 https://gzthss.github.io/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/
 https://gzthss.github.io/2025/05/13/Advanced-FastAPI-Databases-Auth-and-Async/
 https://gzthss.github.io/2025/05/12/Building-a-FastAPI-RESTful-API-from-Scratch/
@@ -11,6 +12,8 @@ https://gzthss.github.io/tags/FastAPI/
 https://gzthss.github.io/tags/SQLAlchemy/
 https://gzthss.github.io/tags/JWT/
 https://gzthss.github.io/tags/Async/
+https://gzthss.github.io/tags/httpx/
+https://gzthss.github.io/tags/asyncio/
 https://gzthss.github.io/tags/Python/
 https://gzthss.github.io/tags/Backend/
 https://gzthss.github.io/tags/CentOS/
