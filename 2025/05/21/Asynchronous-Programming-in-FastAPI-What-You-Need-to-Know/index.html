@@ -1,230 +1,292 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
 
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"gzthss.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="Master asynchronous programming in FastAPI: Understand event loop mechanics, implement non-blocking I&#x2F;O operations, and boost API performance with real-world">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="GZTHSS">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Master asynchronous programming in FastAPI: Understand event loop mechanics, implement non-blocking I&#x2F;O operations, and boost API performance with real-world">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Asynchronous Programming in FastAPI What You Need to Know">
 <meta property="og:url" content="https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/index.html">
 <meta property="og:site_name" content="GZTHSS">
 <meta property="og:description" content="Master asynchronous programming in FastAPI: Understand event loop mechanics, implement non-blocking I&#x2F;O operations, and boost API performance with real-world">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/mermaid_chart.png">
-<meta property="og:image" content="https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/async_get_data.png">
-<meta property="og:image" content="https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/get_items.png">
+<meta property="og:image" content="https://gzthss.github.io/img/async_img.png">
 <meta property="article:published_time" content="2025-05-21T02:05:03.000Z">
-<meta property="article:modified_time" content="2025-05-21T11:23:04.348Z">
+<meta property="article:modified_time" content="2025-06-14T09:04:12.748Z">
 <meta property="article:author" content="GZTHSS">
 <meta property="article:tag" content="FastAPI">
 <meta property="article:tag" content="Async">
 <meta property="article:tag" content="httpx">
 <meta property="article:tag" content="asyncio">
 <meta property="article:tag" content="Postgresql">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/mermaid_chart.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gzthss.github.io/img/async_img.png">
+  
+  
+  
+  <title>Asynchronous Programming in FastAPI What You Need to Know - GZTHSS</title>
 
-<link rel="canonical" href="https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Asynchronous Programming in FastAPI What You Need to Know | GZTHSS</title>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gzthss.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">GZTHSS</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>GZTHSS`s Blog</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-contact">
-
-    <a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>Contact</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-        <li class="menu-item menu-item-privacy-policy">
-
-    <a href="/privacy-policy/" rel="section"><i class="fa fa-user fa-fw"></i>Privacy Policy</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Asynchronous Programming in FastAPI What You Need to Know"></span>
+          
+        </div>
 
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-05-21 10:05" pubdate>
+          May 21, 2025 am
+        </time>
+      </span>
+    
+  </div>
 
-</div>
-    </header>
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          511 words
+        
+      </span>
+    
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          5 mins
+        
+      </span>
+    
+
+    
+    
   </div>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="GZTHSS">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GZTHSS">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Asynchronous Programming in FastAPI What You Need to Know
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2025-05-21 10:05:03 / Modified: 19:23:04" itemprop="dateCreated datePublished" datetime="2025-05-21T10:05:03+08:00">2025-05-21</time>
-            </span>
-
-          
-            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-            <div class="post-description">Master asynchronous programming in FastAPI: Understand event loop mechanics, implement non-blocking I/O operations, and boost API performance with real-world</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+        
+      </div>
 
       
-        <h3 id="✅-1-Introduction"><a href="#✅-1-Introduction" class="headerlink" title="✅ 1. Introduction"></a>✅ 1. Introduction</h3><p>FastAPI is one of the fastest-growing Python web frameworks, and one of its standout features is first-class support for asynchronous programming. But what does &quot;async&quot; really mean in practice? When should you use it, and when should you avoid it?</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Asynchronous Programming in FastAPI What You Need to Know</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="✅-1-Introduction"><a href="#✅-1-Introduction" class="headerlink" title="✅ 1. Introduction"></a>✅ 1. Introduction</h3><p>FastAPI is one of the fastest-growing Python web frameworks, and one of its standout features is first-class support for asynchronous programming. But what does &quot;async&quot; really mean in practice? When should you use it, and when should you avoid it?</p>
 <p>In this post, we&#39;ll break down the essentials of asynchronous programming in FastAPI. Whether you&#39;re new to async&#x2F;await or wondering how it affects your API performance, this guide will help you understand the concepts and write better, faster web applications.</p>
 <h3 id="✅-2-What-is-Asynchronous-Programming"><a href="#✅-2-What-is-Asynchronous-Programming" class="headerlink" title="✅ 2. What is Asynchronous Programming?"></a>✅ 2. What is Asynchronous Programming?</h3><p>In traditional (synchronous) Python code, each operation happens one after another. If your code needs to wait for something—like a file to load or a network response—it blocks the entire thread until that operation finishes.<br><em><strong>FastAPI Async Request Flow</strong></em></p>
 <!-- ![mermaid_chart](./Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/mermaid_chart.png) -->
-<img src="/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/mermaid_chart.png" class="" title="mermaid_chart">
+<img src="/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/mermaid_chart.png" srcset="/img/loading.gif" lazyload class="" title="mermaid_chart">
 
 <p>Asynchronous programming changes that. Instead of waiting, async code <em>suspends</em> execution while it waits and lets other tasks run in the meantime. This is especially useful for I&#x2F;O-bound tasks like:</p>
 <ul>
@@ -235,12 +297,12 @@
 <p>With Python’s <code>async def</code> and <code>await</code> syntax, you can define coroutines that efficiently handle many I&#x2F;O operations concurrently—without creating new threads or processes.</p>
 <h3 id="✅-3-Async-vs-Sync-in-Python-A-Quick-Primer"><a href="#✅-3-Async-vs-Sync-in-Python-A-Quick-Primer" class="headerlink" title="✅ 3. Async vs Sync in Python: A Quick Primer"></a>✅ 3. Async vs Sync in Python: A Quick Primer</h3><p>Understanding the difference between synchronous and asynchronous code in Python is essential before diving into FastAPI&#39;s async capabilities.</p>
 <p>In synchronous code, everything runs in sequence. If a function takes time (e.g., fetching a webpage), the entire program pauses until that task finishes:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    response = requests.get(<span class="string">&quot;https://httpbin.org/delay/3&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> response.json()</span><br><span class="line"></span><br><span class="line"><span class="comment"># This call blocks until the response is returned</span></span><br><span class="line">data = get_data()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_data</span>():<br>    response = requests.get(<span class="hljs-string">&quot;https://httpbin.org/delay/3&quot;</span>)<br>    <span class="hljs-keyword">return</span> response.json()<br><br><span class="hljs-comment"># This call blocks until the response is returned</span><br>data = get_data()<br></code></pre></td></tr></table></figure>
 
 <p>In contrast, asynchronous code uses async def to define a coroutine, and await to pause the coroutine until a result is ready—without blocking other tasks:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> httpx</span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[<span class="subst">&#123;datetime.now()&#125;</span>] get_data start&quot;</span>)</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> httpx.AsyncClient() <span class="keyword">as</span> client:</span><br><span class="line">        response = <span class="keyword">await</span> client.get(<span class="string">&quot;https://httpbin.org/delay/3&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[<span class="subst">&#123;datetime.now()&#125;</span>] get_data end&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> response.json()</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">quick_task</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[<span class="subst">&#123;datetime.now()&#125;</span>] quick_task start&quot;</span>)</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[<span class="subst">&#123;datetime.now()&#125;</span>] quick_task end&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    task1 = asyncio.create_task(get_data())</span><br><span class="line">    task2 = asyncio.create_task(quick_task())</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">await</span> asyncio.gather(task1, task2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    asyncio.run(main())</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> httpx<br><span class="hljs-keyword">import</span> asyncio<br><span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_data</span>():<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;[<span class="hljs-subst">&#123;datetime.now()&#125;</span>] get_data start&quot;</span>)<br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> httpx.AsyncClient() <span class="hljs-keyword">as</span> client:<br>        response = <span class="hljs-keyword">await</span> client.get(<span class="hljs-string">&quot;https://httpbin.org/delay/3&quot;</span>)<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;[<span class="hljs-subst">&#123;datetime.now()&#125;</span>] get_data end&quot;</span>)<br>        <span class="hljs-keyword">return</span> response.json()<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">quick_task</span>():<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;[<span class="hljs-subst">&#123;datetime.now()&#125;</span>] quick_task start&quot;</span>)<br>    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">1</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;[<span class="hljs-subst">&#123;datetime.now()&#125;</span>] quick_task end&quot;</span>)<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>    task1 = asyncio.create_task(get_data())<br>    task2 = asyncio.create_task(quick_task())<br>    <br>    <span class="hljs-keyword">await</span> asyncio.gather(task1, task2)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    asyncio.run(main())<br></code></pre></td></tr></table></figure>
 <!-- ![async_get_data](./Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/async_get_data.png) -->
-<img src="/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/async_get_data.png" class="" title="async_get_data">
+<img src="/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/async_get_data.png" srcset="/img/loading.gif" lazyload class="" title="async_get_data">
 
 <p>So,You can see that <code>get_data</code> does not block the <code>quick_task</code> function.</p>
 <p><em><strong>The key differences:</strong></em></p>
@@ -273,249 +335,386 @@
 <h3 id="✅-4-Why-Async-Matters-in-FastAPI"><a href="#✅-4-Why-Async-Matters-in-FastAPI" class="headerlink" title="✅ 4. Why Async Matters in FastAPI"></a>✅ 4. Why Async Matters in FastAPI</h3><p>FastAPI is built on top of <code>Starlette</code>, which is an ASGI (Asynchronous Server Gateway Interface) framework. This gives FastAPI native support for asynchronous endpoints using Python’s async&#x2F;await syntax.</p>
 <p>This means FastAPI can handle many I&#x2F;O-bound operations—like reading from a database, calling external APIs, or streaming data—<strong>without blocking the main thread</strong>. This leads to higher performance under load, especially in real-time and high-concurrency environments.</p>
 <p>Here&#39;s what an async route looks like in FastAPI:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"><span class="keyword">import</span> httpx</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/quote&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">fetch_quote</span>():</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> httpx.AsyncClient() <span class="keyword">as</span> client:</span><br><span class="line">        response = <span class="keyword">await</span> client.get(<span class="string">&quot;https://httpbin.org/delay/3&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> response.json()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> fastapi <span class="hljs-keyword">import</span> FastAPI<br><span class="hljs-keyword">import</span> httpx<br><br>app = FastAPI()<br><br><span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/quote&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">fetch_quote</span>():<br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> httpx.AsyncClient() <span class="hljs-keyword">as</span> client:<br>        response = <span class="hljs-keyword">await</span> client.get(<span class="hljs-string">&quot;https://httpbin.org/delay/3&quot;</span>)<br>        <span class="hljs-keyword">return</span> response.json()<br></code></pre></td></tr></table></figure>
 <p>Because this endpoint is asynchronous, FastAPI can continue processing other requests while it waits for the API response—improving throughput and responsiveness.</p>
 <p>🧠 <strong>Good to know</strong>: You can still define sync endpoints using normal def, and FastAPI will run them in a thread pool—but async functions are more efficient for I&#x2F;O-bound operations.</p>
 <h3 id="✅-5-Defining-async-endpoints-in-FastAPI"><a href="#✅-5-Defining-async-endpoints-in-FastAPI" class="headerlink" title="✅ 5. Defining async endpoints in FastAPI"></a>✅ 5. Defining async endpoints in FastAPI</h3><p>FastAPI makes it incredibly simple to define asynchronous endpoints. All you need to do is declare your route handler with <code>async def</code>, and use <code>await</code> inside it for any I&#x2F;O-bound operations.</p>
 <p>Here&#39;s a minimal example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/ping&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">ping</span>():</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;message&quot;</span>: <span class="string">&quot;pong&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> fastapi <span class="hljs-keyword">import</span> FastAPI<br><br>app = FastAPI()<br><br><span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/ping&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">ping</span>():<br>    <span class="hljs-keyword">return</span> &#123;<span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;pong&quot;</span>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>In this example, the <code>/ping</code> route is defined using async def, but since it doesn&#39;t do any real I&#x2F;O, it runs like a normal function. You only gain performance benefits when you use await with async-compatible libraries.</p>
 <p>Let&#39;s compare an async and sync version of the same endpoint<br><strong>Async version (recommended for I&#x2F;O-bound tasks):</strong></p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> httpx</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/async-quote&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">async_quote</span>():</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> httpx.AsyncClient() <span class="keyword">as</span> client:</span><br><span class="line">        response = <span class="keyword">await</span> client.get(<span class="string">&quot;https://httpbin.org/delay/3&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> response.json()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Sync version (also supported):</span></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/sync-quote&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sync_quote</span>():</span><br><span class="line">    response = requests.get(<span class="string">&quot;https://httpbin.org/delay/3&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> response.json()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">import</span> httpx<br><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/async-quote&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">async_quote</span>():<br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> httpx.AsyncClient() <span class="hljs-keyword">as</span> client:<br>        response = <span class="hljs-keyword">await</span> client.get(<span class="hljs-string">&quot;https://httpbin.org/delay/3&quot;</span>)<br>        <span class="hljs-keyword">return</span> response.json()<br><br><span class="hljs-comment"># Sync version (also supported):</span><br><span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/sync-quote&quot;</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">sync_quote</span>():<br>    response = requests.get(<span class="hljs-string">&quot;https://httpbin.org/delay/3&quot;</span>)<br>    <span class="hljs-keyword">return</span> response.json()<br><br></code></pre></td></tr></table></figure>
 <p>🔥 FastAPI supports both def and async def endpoints. However, only async def endpoints can fully take advantage of FastAPI&#39;s non-blocking ASGI stack for high concurrency.<br>Internally, FastAPI will run def-based functions in a thread pool (via run_in_threadpool), which adds some overhead and doesn&#39;t scale as well for thousands of concurrent connections.</p>
 <h3 id="✅-6-await-in-action-I-O-bound-examples-with-async-database"><a href="#✅-6-await-in-action-I-O-bound-examples-with-async-database" class="headerlink" title="✅ 6. await in action: I&#x2F;O-bound examples (with async database)"></a>✅ 6. await in action: I&#x2F;O-bound examples (with async database)</h3><p>One of the most common and powerful uses of <code>await</code> in FastAPI is when dealing with I&#x2F;O-bound operations like querying a database. In synchronous code, such operations block the main thread. But with asynchronous drivers, FastAPI can handle many requests concurrently, even if some are waiting for database responses.</p>
 <p>Here&#39;s a practical example using FastAPI with <a target="_blank" rel="noopener" href="https://sqlmodel.tiangolo.com/">SQLModel</a> and an async engine powered by SQLAlchemy 1.4+ and <code>asyncpg</code>.</p>
 <p><strong>The code for this article is located in the GitHub repository named 04_fastapi_async.</strong><br><a target="_blank" rel="noopener" href="https://github.com/gzthss/fastapi_tutorial.git">https://github.com/gzthss/fastapi_tutorial.git</a></p>
-<h4 id="🔧-Setup-Install-requirements"><a href="#🔧-Setup-Install-requirements" class="headerlink" title="🔧 Setup: Install requirements"></a>🔧 Setup: Install requirements</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install sqlmodel[asyncio] asyncpg</span><br></pre></td></tr></table></figure>
+<h4 id="🔧-Setup-Install-requirements"><a href="#🔧-Setup-Install-requirements" class="headerlink" title="🔧 Setup: Install requirements"></a>🔧 Setup: Install requirements</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">pip install sqlmodel[asyncio] asyncpg<br></code></pre></td></tr></table></figure>
 
 <p>Let&#39;s walk through a practical example using <strong>SQLModel</strong> (an async-compatible ORM from FastAPI’s creator) and Postgresql.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># models.py</span></span><br><span class="line"><span class="keyword">from</span> sqlmodel <span class="keyword">import</span> SQLModel, Field</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Optional</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Item</span>(SQLModel, table=<span class="literal">True</span>):</span><br><span class="line">    <span class="built_in">id</span>: <span class="type">Optional</span>[<span class="built_in">int</span>] = Field(default=<span class="literal">None</span>, primary_key=<span class="literal">True</span>)</span><br><span class="line">    name: <span class="built_in">str</span></span><br><span class="line">    description: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># models.py</span><br><span class="hljs-keyword">from</span> sqlmodel <span class="hljs-keyword">import</span> SQLModel, Field<br><span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> <span class="hljs-type">Optional</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Item</span>(SQLModel, table=<span class="hljs-literal">True</span>):<br>    <span class="hljs-built_in">id</span>: <span class="hljs-type">Optional</span>[<span class="hljs-built_in">int</span>] = Field(default=<span class="hljs-literal">None</span>, primary_key=<span class="hljs-literal">True</span>)<br>    name: <span class="hljs-built_in">str</span><br>    description: <span class="hljs-type">Optional</span>[<span class="hljs-built_in">str</span>] = <span class="hljs-literal">None</span><br><br><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># database.py</span></span><br><span class="line"><span class="keyword">from</span> sqlmodel <span class="keyword">import</span> SQLModel</span><br><span class="line"><span class="keyword">from</span> sqlmodel.ext.asyncio.session <span class="keyword">import</span> AsyncSession</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.ext.asyncio <span class="keyword">import</span> create_async_engine, async_sessionmaker</span><br><span class="line"></span><br><span class="line">database_url = <span class="string">&quot;postgresql+asyncpg://postgres:admin123@192.168.1.11:5432/postgres&quot;</span></span><br><span class="line"></span><br><span class="line">engine = create_async_engine(database_url, echo=<span class="literal">True</span>)</span><br><span class="line">async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">get_session</span>():</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> async_session() <span class="keyword">as</span> session:</span><br><span class="line">        <span class="keyword">yield</span> session</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">init_db</span>():</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">with</span> engine.begin() <span class="keyword">as</span> conn:</span><br><span class="line">        <span class="keyword">await</span> conn.run_sync(SQLModel.metadata.create_all)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># database.py</span><br><span class="hljs-keyword">from</span> sqlmodel <span class="hljs-keyword">import</span> SQLModel<br><span class="hljs-keyword">from</span> sqlmodel.ext.asyncio.session <span class="hljs-keyword">import</span> AsyncSession<br><span class="hljs-keyword">from</span> sqlalchemy.ext.asyncio <span class="hljs-keyword">import</span> create_async_engine, async_sessionmaker<br><br>database_url = <span class="hljs-string">&quot;postgresql+asyncpg://postgres:admin123@192.168.1.11:5432/postgres&quot;</span><br><br>engine = create_async_engine(database_url, echo=<span class="hljs-literal">True</span>)<br>async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=<span class="hljs-literal">False</span>)<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_session</span>():<br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> async_session() <span class="hljs-keyword">as</span> session:<br>        <span class="hljs-keyword">yield</span> session<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">init_db</span>():<br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> engine.begin() <span class="hljs-keyword">as</span> conn:<br>        <span class="hljs-keyword">await</span> conn.run_sync(SQLModel.metadata.create_all)<br><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># main.py</span></span><br><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI, HTTPException, Depends</span><br><span class="line"><span class="keyword">from</span> sqlmodel <span class="keyword">import</span> select</span><br><span class="line"><span class="keyword">import</span> uvicorn</span><br><span class="line"><span class="keyword">from</span> database <span class="keyword">import</span> init_db, engine, get_session</span><br><span class="line"><span class="keyword">from</span> models <span class="keyword">import</span> Item</span><br><span class="line"><span class="keyword">from</span> sqlmodel.ext.asyncio.session <span class="keyword">import</span> AsyncSession</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.on_event(<span class="params"><span class="string">&quot;startup&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">startup</span>():</span><br><span class="line">    <span class="keyword">await</span> init_db()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/items/&#123;item_id&#125;&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">read_item</span>(<span class="params">item_id: <span class="built_in">int</span>, session: AsyncSession = Depends(<span class="params">get_session</span>)</span>):</span><br><span class="line">    query = select(Item).where(Item.<span class="built_in">id</span> == item_id)</span><br><span class="line">    result = <span class="keyword">await</span> session.<span class="built_in">exec</span>(query)</span><br><span class="line">    item = result.one_or_none()</span><br><span class="line">    <span class="keyword">if</span> item <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">raise</span> HTTPException(status_code=<span class="number">404</span>, detail=<span class="string">&quot;Item not found&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> item</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    uvicorn.run(app, host=<span class="string">&quot;127.0.0.1&quot;</span>, port=<span class="number">8000</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># main.py</span><br><span class="hljs-keyword">from</span> fastapi <span class="hljs-keyword">import</span> FastAPI, HTTPException, Depends<br><span class="hljs-keyword">from</span> sqlmodel <span class="hljs-keyword">import</span> select<br><span class="hljs-keyword">import</span> uvicorn<br><span class="hljs-keyword">from</span> database <span class="hljs-keyword">import</span> init_db, engine, get_session<br><span class="hljs-keyword">from</span> models <span class="hljs-keyword">import</span> Item<br><span class="hljs-keyword">from</span> sqlmodel.ext.asyncio.session <span class="hljs-keyword">import</span> AsyncSession<br><br>app = FastAPI()<br><br><span class="hljs-meta">@app.on_event(<span class="hljs-params"><span class="hljs-string">&quot;startup&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">startup</span>():<br>    <span class="hljs-keyword">await</span> init_db()<br><br><span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/items/&#123;item_id&#125;&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">read_item</span>(<span class="hljs-params">item_id: <span class="hljs-built_in">int</span>, session: AsyncSession = Depends(<span class="hljs-params">get_session</span>)</span>):<br>    query = select(Item).where(Item.<span class="hljs-built_in">id</span> == item_id)<br>    result = <span class="hljs-keyword">await</span> session.<span class="hljs-built_in">exec</span>(query)<br>    item = result.one_or_none()<br>    <span class="hljs-keyword">if</span> item <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:<br>        <span class="hljs-keyword">raise</span> HTTPException(status_code=<span class="hljs-number">404</span>, detail=<span class="hljs-string">&quot;Item not found&quot;</span>)<br>    <span class="hljs-keyword">return</span> item<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    uvicorn.run(app, host=<span class="hljs-string">&quot;127.0.0.1&quot;</span>, port=<span class="hljs-number">8000</span>)<br></code></pre></td></tr></table></figure>
 <p><strong>The image below shows the result of the API call.</strong></p>
 <!-- ![get_item](./Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/get_items.png) -->
-<img src="/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/get_items.png" class="" title="get_items">
+<img src="/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/get_items.png" srcset="/img/loading.gif" lazyload class="" title="get_items">
 
 <p>💗💗💗I hope this article helps you better understand asynchronous programming in FastAPI and improves your API performance in real-world projects. If you found it helpful, feel free to share it with others!</p>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/FastAPI/" class="print-no-link">#FastAPI</a>
+      
+        <a href="/tags/Async/" class="print-no-link">#Async</a>
+      
+        <a href="/tags/httpx/" class="print-no-link">#httpx</a>
+      
+        <a href="/tags/asyncio/" class="print-no-link">#asyncio</a>
+      
+        <a href="/tags/Postgresql/" class="print-no-link">#Postgresql</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Asynchronous Programming in FastAPI What You Need to Know</div>
+      <div>https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>GZTHSS</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>May 21, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/" title="Building a YouTube Downloader with FastAPI and yt-dlp">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Building a YouTube Downloader with FastAPI and yt-dlp</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/" title="​JWT Authentication in FastAPI:Securing Your API​">
+                        <span class="hidden-mobile">​JWT Authentication in FastAPI:Securing Your API​</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
 
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/FastAPI/" rel="tag"># FastAPI</a>
-              <a href="/tags/Async/" rel="tag"># Async</a>
-              <a href="/tags/httpx/" rel="tag"># httpx</a>
-              <a href="/tags/asyncio/" rel="tag"># asyncio</a>
-              <a href="/tags/Postgresql/" rel="tag"># Postgresql</a>
-          </div>
-
-        
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
 
 
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/" rel="prev" title="​JWT Authentication in FastAPI:Securing Your API​">
-      <i class="fa fa-chevron-left"></i> ​JWT Authentication in FastAPI:Securing Your API​
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/" rel="next" title="Building a YouTube Downloader with FastAPI and yt-dlp">
-      Building a YouTube Downloader with FastAPI and yt-dlp <i class="fa fa-chevron-right"></i>
-    </a></div>
+
+  </aside>
+
+
     </div>
-      </footer>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
-  </article>
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
   
   
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
-          </div>
-          
 
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
       }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
     });
-  }
+  });
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
+  <script>Fluid.plugins.codeWidget();</script>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-1-Introduction"><span class="nav-number">1.</span> <span class="nav-text">✅ 1. Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-2-What-is-Asynchronous-Programming"><span class="nav-number">2.</span> <span class="nav-text">✅ 2. What is Asynchronous Programming?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-3-Async-vs-Sync-in-Python-A-Quick-Primer"><span class="nav-number">3.</span> <span class="nav-text">✅ 3. Async vs Sync in Python: A Quick Primer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-4-Why-Async-Matters-in-FastAPI"><span class="nav-number">4.</span> <span class="nav-text">✅ 4. Why Async Matters in FastAPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-5-Defining-async-endpoints-in-FastAPI"><span class="nav-number">5.</span> <span class="nav-text">✅ 5. Defining async endpoints in FastAPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9C%85-6-await-in-action-I-O-bound-examples-with-async-database"><span class="nav-number">6.</span> <span class="nav-text">✅ 6. await in action: I&#x2F;O-bound examples (with async database)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%F0%9F%94%A7-Setup-Install-requirements"><span class="nav-number">6.1.</span> <span class="nav-text">🔧 Setup: Install requirements</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">GZTHSS</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">6</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2025</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">GZTHSS</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="Total Visitors">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="Total Views">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-<script src="/js/utils.js"></script>
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
-<script src="/js/motion.js"></script>
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
 
-<script src="/js/schemes/muse.js"></script>
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
-<script src="/js/next-boot.js"></script>
 
 
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>

@@ -1,37 +1,34 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
 
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"gzthss.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="Learn how to build a modern YouTube video downloader using FastAPI and yt-dlp with a beautiful web interface, real-time progress tracking, and robust error handling.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="GZTHSS">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Learn how to build a modern YouTube video downloader using FastAPI and yt-dlp with a beautiful web interface, real-time progress tracking, and robust error handling.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Building a YouTube Downloader with FastAPI and yt-dlp">
 <meta property="og:url" content="https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/index.html">
 <meta property="og:site_name" content="GZTHSS">
 <meta property="og:description" content="Learn how to build a modern YouTube video downloader using FastAPI and yt-dlp with a beautiful web interface, real-time progress tracking, and robust error handling.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/create_new.png">
-<meta property="og:image" content="https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/formats.png">
-<meta property="og:image" content="https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/download_progress.png">
+<meta property="og:image" content="https://gzthss.github.io/img/youtube_img.png">
 <meta property="article:published_time" content="2025-06-07T09:13:42.000Z">
-<meta property="article:modified_time" content="2025-06-10T08:20:41.225Z">
+<meta property="article:modified_time" content="2025-06-14T09:07:50.104Z">
 <meta property="article:author" content="GZTHSS">
 <meta property="article:tag" content="FastAPI">
 <meta property="article:tag" content="Python">
@@ -39,212 +36,254 @@
 <meta property="article:tag" content="YouTube">
 <meta property="article:tag" content="Web Development">
 <meta property="article:tag" content="API">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/create_new.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gzthss.github.io/img/youtube_img.png">
+  
+  
+  
+  <title>Building a YouTube Downloader with FastAPI and yt-dlp - GZTHSS</title>
 
-<link rel="canonical" href="https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'en'
-  };
-</script>
 
-  <title>Building a YouTube Downloader with FastAPI and yt-dlp | GZTHSS</title>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
 
 
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gzthss.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
 
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
 
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+<body>
+  
 
-</head>
+  <header>
+    
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">GZTHSS</h1>
-      <span class="logo-line-after"><i></i></span>
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>GZTHSS`s Blog</strong>
     </a>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-contact">
-
-    <a href="/contact/" rel="section"><i class="fa fa-envelope fa-fw"></i>Contact</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
-
-  </li>
-        <li class="menu-item menu-item-privacy-policy">
-
-    <a href="/privacy-policy/" rel="section"><i class="fa fa-user fa-fw"></i>Privacy Policy</a>
-
-  </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Building a YouTube Downloader with FastAPI and yt-dlp"></span>
+          
+        </div>
 
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-07 17:13" pubdate>
+          June 7, 2025 pm
+        </time>
+      </span>
+    
+  </div>
 
-</div>
-    </header>
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k words
+        
+      </span>
+    
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 mins
+        
+      </span>
+    
+
+    
+    
   </div>
 
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="GZTHSS">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GZTHSS">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Building a YouTube Downloader with FastAPI and yt-dlp
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-06-07 17:13:42" itemprop="dateCreated datePublished" datetime="2025-06-07T17:13:42+08:00">2025-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-06-10 16:20:41" itemprop="dateModified" datetime="2025-06-10T16:20:41+08:00">2025-06-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web-Development/" itemprop="url" rel="index"><span itemprop="name">Web Development</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web-Development/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web-Development/Python/FastAPI/" itemprop="url" rel="index"><span itemprop="name">FastAPI</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-            <div class="post-description">Learn how to build a modern YouTube video downloader using FastAPI and yt-dlp with a beautiful web interface, real-time progress tracking, and robust error handling.</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+        
+      </div>
 
       
-        <h1 id="Building-a-YouTube-Downloader-with-FastAPI-and-yt-dlp"><a href="#Building-a-YouTube-Downloader-with-FastAPI-and-yt-dlp" class="headerlink" title="Building a YouTube Downloader with FastAPI and yt-dlp"></a>Building a YouTube Downloader with FastAPI and yt-dlp</h1><p>In this comprehensive guide, we&#39;ll build a modern YouTube video downloader using <strong>FastAPI</strong> and <strong>yt-dlp</strong>. Our application will feature a clean web interface, real-time download progress tracking, and robust error handling to deal with YouTube&#39;s evolving anti-scraping measures.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Building a YouTube Downloader with FastAPI and yt-dlp</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Building-a-YouTube-Downloader-with-FastAPI-and-yt-dlp"><a href="#Building-a-YouTube-Downloader-with-FastAPI-and-yt-dlp" class="headerlink" title="Building a YouTube Downloader with FastAPI and yt-dlp"></a>Building a YouTube Downloader with FastAPI and yt-dlp</h1><p>In this comprehensive guide, we&#39;ll build a modern YouTube video downloader using <strong>FastAPI</strong> and <strong>yt-dlp</strong>. Our application will feature a clean web interface, real-time download progress tracking, and robust error handling to deal with YouTube&#39;s evolving anti-scraping measures.</p>
 <h2 id="🎯-What-We-ll-Build"><a href="#🎯-What-We-ll-Build" class="headerlink" title="🎯 What We&#39;ll Build"></a>🎯 What We&#39;ll Build</h2><ul>
 <li><strong>Modern Web Interface</strong>: Clean, responsive UI with Bootstrap</li>
 <li><strong>Real-time Progress Tracking</strong>: Live download progress updates</li>
@@ -261,33 +300,33 @@
 <li><strong>Real-time Updates</strong>: Polling-based progress tracking</li>
 </ul>
 <h2 id="📋-Prerequisites"><a href="#📋-Prerequisites" class="headerlink" title="📋 Prerequisites"></a>📋 Prerequisites</h2><p>Before we start, make sure you have:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python 3.8+</span></span><br><span class="line">python --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># Required packages</span></span><br><span class="line">pip install fastapi uvicorn yt-dlp sqlalchemy python-multipart jinja2</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Python 3.8+</span><br>python --version<br><br><span class="hljs-comment"># Required packages</span><br>pip install fastapi uvicorn yt-dlp sqlalchemy python-multipart jinja2<br></code></pre></td></tr></table></figure>
 
-<h2 id="🏗️-Project-Structure"><a href="#🏗️-Project-Structure" class="headerlink" title="🏗️ Project Structure"></a>🏗️ Project Structure</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">yt-dlp-web/</span><br><span class="line">├── app/</span><br><span class="line">│   ├── main.py              # FastAPI application</span><br><span class="line">│   ├── models.py            # Database models</span><br><span class="line">│   ├── database.py          # Database configuration</span><br><span class="line">│   └── youtube_downloader.py # Core download logic</span><br><span class="line">├── static/</span><br><span class="line">│   ├── script.js           # Frontend JavaScript</span><br><span class="line">│   └── style.css           # Custom styles</span><br><span class="line">├── templates/</span><br><span class="line">│   └── index.html          # Main HTML template</span><br><span class="line">├── downloads/              # Downloaded files directory</span><br><span class="line">└── requirements.txt        # Python dependencies</span><br></pre></td></tr></table></figure>
+<h2 id="🏗️-Project-Structure"><a href="#🏗️-Project-Structure" class="headerlink" title="🏗️ Project Structure"></a>🏗️ Project Structure</h2><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs nix">yt-dlp-web<span class="hljs-symbol">/</span><br>├── app<span class="hljs-symbol">/</span><br>│   ├── main.py              <span class="hljs-comment"># FastAPI application</span><br>│   ├── models.py            <span class="hljs-comment"># Database models</span><br>│   ├── database.py          <span class="hljs-comment"># Database configuration</span><br>│   └── youtube_downloader.py <span class="hljs-comment"># Core download logic</span><br>├── static<span class="hljs-symbol">/</span><br>│   ├── script.js           <span class="hljs-comment"># Frontend JavaScript</span><br>│   └── style.css           <span class="hljs-comment"># Custom styles</span><br>├── templates<span class="hljs-symbol">/</span><br>│   └── index.html          <span class="hljs-comment"># Main HTML template</span><br>├── downloads<span class="hljs-symbol">/</span>              <span class="hljs-comment"># Downloaded files directory</span><br>└── requirements.txt        <span class="hljs-comment"># Python dependencies</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="🗄️-Database-Models"><a href="#🗄️-Database-Models" class="headerlink" title="🗄️ Database Models"></a>🗄️ Database Models</h2><p>Let&#39;s start by defining our database models:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app/models.py</span></span><br><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> Column, Integer, String, Float, DateTime, Text</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.ext.declarative <span class="keyword">import</span> declarative_base</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.sql <span class="keyword">import</span> func</span><br><span class="line"><span class="keyword">from</span> enum <span class="keyword">import</span> Enum</span><br><span class="line"></span><br><span class="line">Base = declarative_base()</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TaskStatus</span>(<span class="built_in">str</span>, Enum):</span><br><span class="line">    PENDING = <span class="string">&quot;pending&quot;</span></span><br><span class="line">    DOWNLOADING = <span class="string">&quot;downloading&quot;</span></span><br><span class="line">    COMPLETED = <span class="string">&quot;completed&quot;</span></span><br><span class="line">    FAILED = <span class="string">&quot;failed&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DownloadTask</span>(<span class="title class_ inherited__">Base</span>):</span><br><span class="line">    __tablename__ = <span class="string">&quot;download_tasks&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="built_in">id</span> = Column(Integer, primary_key=<span class="literal">True</span>, index=<span class="literal">True</span>)</span><br><span class="line">    url = Column(String, nullable=<span class="literal">False</span>)</span><br><span class="line">    title = Column(String, nullable=<span class="literal">True</span>)</span><br><span class="line">    status = Column(String, default=TaskStatus.PENDING)</span><br><span class="line">    progress = Column(Float, default=<span class="number">0.0</span>)</span><br><span class="line">    file_path = Column(String, nullable=<span class="literal">True</span>)</span><br><span class="line">    file_size = Column(Integer, nullable=<span class="literal">True</span>)</span><br><span class="line">    error_message = Column(Text, nullable=<span class="literal">True</span>)</span><br><span class="line">    format_id = Column(String, nullable=<span class="literal">True</span>)</span><br><span class="line">    created_at = Column(DateTime, default=func.now())</span><br><span class="line">    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">to_dict</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&quot;id&quot;</span>: <span class="variable language_">self</span>.<span class="built_in">id</span>,</span><br><span class="line">            <span class="string">&quot;url&quot;</span>: <span class="variable language_">self</span>.url,</span><br><span class="line">            <span class="string">&quot;title&quot;</span>: <span class="variable language_">self</span>.title,</span><br><span class="line">            <span class="string">&quot;status&quot;</span>: <span class="variable language_">self</span>.status,</span><br><span class="line">            <span class="string">&quot;progress&quot;</span>: <span class="variable language_">self</span>.progress,</span><br><span class="line">            <span class="string">&quot;file_path&quot;</span>: <span class="variable language_">self</span>.file_path,</span><br><span class="line">            <span class="string">&quot;file_size&quot;</span>: <span class="variable language_">self</span>.file_size,</span><br><span class="line">            <span class="string">&quot;error_message&quot;</span>: <span class="variable language_">self</span>.error_message,</span><br><span class="line">            <span class="string">&quot;format_id&quot;</span>: <span class="variable language_">self</span>.format_id,</span><br><span class="line">            <span class="string">&quot;created_at&quot;</span>: <span class="variable language_">self</span>.created_at.isoformat() <span class="keyword">if</span> <span class="variable language_">self</span>.created_at <span class="keyword">else</span> <span class="literal">None</span>,</span><br><span class="line">            <span class="string">&quot;updated_at&quot;</span>: <span class="variable language_">self</span>.updated_at.isoformat() <span class="keyword">if</span> <span class="variable language_">self</span>.updated_at <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># app/models.py</span><br><span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> Column, Integer, String, Float, DateTime, Text<br><span class="hljs-keyword">from</span> sqlalchemy.ext.declarative <span class="hljs-keyword">import</span> declarative_base<br><span class="hljs-keyword">from</span> sqlalchemy.sql <span class="hljs-keyword">import</span> func<br><span class="hljs-keyword">from</span> enum <span class="hljs-keyword">import</span> Enum<br><br>Base = declarative_base()<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">TaskStatus</span>(<span class="hljs-built_in">str</span>, Enum):<br>    PENDING = <span class="hljs-string">&quot;pending&quot;</span><br>    DOWNLOADING = <span class="hljs-string">&quot;downloading&quot;</span><br>    COMPLETED = <span class="hljs-string">&quot;completed&quot;</span><br>    FAILED = <span class="hljs-string">&quot;failed&quot;</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">DownloadTask</span>(<span class="hljs-title class_ inherited__">Base</span>):<br>    __tablename__ = <span class="hljs-string">&quot;download_tasks&quot;</span><br>    <br>    <span class="hljs-built_in">id</span> = Column(Integer, primary_key=<span class="hljs-literal">True</span>, index=<span class="hljs-literal">True</span>)<br>    url = Column(String, nullable=<span class="hljs-literal">False</span>)<br>    title = Column(String, nullable=<span class="hljs-literal">True</span>)<br>    status = Column(String, default=TaskStatus.PENDING)<br>    progress = Column(Float, default=<span class="hljs-number">0.0</span>)<br>    file_path = Column(String, nullable=<span class="hljs-literal">True</span>)<br>    file_size = Column(Integer, nullable=<span class="hljs-literal">True</span>)<br>    error_message = Column(Text, nullable=<span class="hljs-literal">True</span>)<br>    format_id = Column(String, nullable=<span class="hljs-literal">True</span>)<br>    created_at = Column(DateTime, default=func.now())<br>    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())<br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">to_dict</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-keyword">return</span> &#123;<br>            <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-variable language_">self</span>.<span class="hljs-built_in">id</span>,<br>            <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-variable language_">self</span>.url,<br>            <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-variable language_">self</span>.title,<br>            <span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-variable language_">self</span>.status,<br>            <span class="hljs-string">&quot;progress&quot;</span>: <span class="hljs-variable language_">self</span>.progress,<br>            <span class="hljs-string">&quot;file_path&quot;</span>: <span class="hljs-variable language_">self</span>.file_path,<br>            <span class="hljs-string">&quot;file_size&quot;</span>: <span class="hljs-variable language_">self</span>.file_size,<br>            <span class="hljs-string">&quot;error_message&quot;</span>: <span class="hljs-variable language_">self</span>.error_message,<br>            <span class="hljs-string">&quot;format_id&quot;</span>: <span class="hljs-variable language_">self</span>.format_id,<br>            <span class="hljs-string">&quot;created_at&quot;</span>: <span class="hljs-variable language_">self</span>.created_at.isoformat() <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.created_at <span class="hljs-keyword">else</span> <span class="hljs-literal">None</span>,<br>            <span class="hljs-string">&quot;updated_at&quot;</span>: <span class="hljs-variable language_">self</span>.updated_at.isoformat() <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.updated_at <span class="hljs-keyword">else</span> <span class="hljs-literal">None</span><br>        &#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="🎬-YouTube-Downloader-Core"><a href="#🎬-YouTube-Downloader-Core" class="headerlink" title="🎬 YouTube Downloader Core"></a>🎬 YouTube Downloader Core</h2><p>The heart of our application is the YouTube downloader class:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app/youtube_downloader.py</span></span><br><span class="line"><span class="keyword">import</span> yt_dlp</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Dict</span>, <span class="type">Any</span>, <span class="type">Callable</span>, <span class="type">Optional</span></span><br><span class="line"><span class="keyword">from</span> models <span class="keyword">import</span> TaskStatus</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">YouTubeDownloader</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, download_dir: <span class="built_in">str</span> = <span class="string">&quot;./downloads&quot;</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.download_dir = download_dir</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_video_info</span>(<span class="params">self, url: <span class="built_in">str</span></span>) -&gt; <span class="type">Dict</span>[<span class="built_in">str</span>, <span class="type">Any</span>]:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Extract video information without downloading&quot;&quot;&quot;</span></span><br><span class="line">        ydl_opts = &#123;</span><br><span class="line">            <span class="string">&#x27;quiet&#x27;</span>: <span class="literal">True</span>,</span><br><span class="line">            <span class="string">&#x27;no_warnings&#x27;</span>: <span class="literal">True</span>,</span><br><span class="line">            <span class="string">&#x27;extract_flat&#x27;</span>: <span class="literal">False</span>,</span><br><span class="line">            <span class="string">&#x27;extractor_args&#x27;</span>: &#123;</span><br><span class="line">                <span class="string">&#x27;youtube&#x27;</span>: &#123;</span><br><span class="line">                    <span class="string">&#x27;player_client&#x27;</span>: [<span class="string">&#x27;tv&#x27;</span>, <span class="string">&#x27;mweb&#x27;</span>, <span class="string">&#x27;web&#x27;</span>],</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&#x27;http_headers&#x27;</span>: &#123;</span><br><span class="line">                <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&#x27;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&#x27;ignoreerrors&#x27;</span>: <span class="literal">True</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">with</span> yt_dlp.YoutubeDL(ydl_opts) <span class="keyword">as</span> ydl:</span><br><span class="line">            info = ydl.extract_info(url, download=<span class="literal">False</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># Process and categorize available formats</span></span><br><span class="line">            formats = <span class="variable language_">self</span>._process_formats(info.get(<span class="string">&#x27;formats&#x27;</span>, []))</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="string">&#x27;title&#x27;</span>: info.get(<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;Unknown&#x27;</span>),</span><br><span class="line">                <span class="string">&#x27;duration&#x27;</span>: info.get(<span class="string">&#x27;duration&#x27;</span>, <span class="number">0</span>),</span><br><span class="line">                <span class="string">&#x27;uploader&#x27;</span>: info.get(<span class="string">&#x27;uploader&#x27;</span>, <span class="string">&#x27;Unknown&#x27;</span>),</span><br><span class="line">                <span class="string">&#x27;view_count&#x27;</span>: info.get(<span class="string">&#x27;view_count&#x27;</span>, <span class="number">0</span>),</span><br><span class="line">                <span class="string">&#x27;thumbnail&#x27;</span>: info.get(<span class="string">&#x27;thumbnail&#x27;</span>, <span class="string">&#x27;&#x27;</span>),</span><br><span class="line">                <span class="string">&#x27;webpage_url&#x27;</span>: info.get(<span class="string">&#x27;webpage_url&#x27;</span>, url),</span><br><span class="line">                <span class="string">&#x27;formats&#x27;</span>: formats</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">download_video</span>(<span class="params">self, task_id: <span class="built_in">int</span>, url: <span class="built_in">str</span>, format_id: <span class="built_in">str</span> = <span class="string">&#x27;best&#x27;</span>, </span></span><br><span class="line"><span class="params">                      progress_callback: <span class="type">Optional</span>[<span class="type">Callable</span>] = <span class="literal">None</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Download video in a separate thread&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">download_thread</span>():</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="comment"># Ensure download directory exists</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="variable language_">self</span>.download_dir):</span><br><span class="line">                    os.makedirs(<span class="variable language_">self</span>.download_dir)</span><br><span class="line">                </span><br><span class="line">                <span class="comment"># Configure yt-dlp options</span></span><br><span class="line">                ydl_opts = &#123;</span><br><span class="line">                    <span class="string">&#x27;format&#x27;</span>: <span class="variable language_">self</span>._get_format_selector(format_id),</span><br><span class="line">                    <span class="string">&#x27;outtmpl&#x27;</span>: os.path.join(<span class="variable language_">self</span>.download_dir, <span class="string">&quot;%(title)s-%(id)s.%(ext)s&quot;</span>),</span><br><span class="line">                    <span class="string">&#x27;writeinfojson&#x27;</span>: <span class="literal">True</span>,</span><br><span class="line">                    <span class="string">&#x27;merge_output_format&#x27;</span>: <span class="string">&#x27;mp4&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;prefer_ffmpeg&#x27;</span>: <span class="literal">True</span>,</span><br><span class="line">                    <span class="string">&#x27;extractor_args&#x27;</span>: &#123;</span><br><span class="line">                        <span class="string">&#x27;youtube&#x27;</span>: &#123;</span><br><span class="line">                            <span class="string">&#x27;player_client&#x27;</span>: [<span class="string">&#x27;tv&#x27;</span>, <span class="string">&#x27;mweb&#x27;</span>, <span class="string">&#x27;web&#x27;</span>],</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">&#x27;retries&#x27;</span>: <span class="number">3</span>,</span><br><span class="line">                    <span class="string">&#x27;fragment_retries&#x27;</span>: <span class="number">3</span>,</span><br><span class="line">                    <span class="string">&#x27;socket_timeout&#x27;</span>: <span class="number">30</span>,</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> progress_callback:</span><br><span class="line">                    ydl_opts[<span class="string">&#x27;progress_hooks&#x27;</span>] = [<span class="variable language_">self</span>._progress_hook(task_id, progress_callback)]</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">with</span> yt_dlp.YoutubeDL(ydl_opts) <span class="keyword">as</span> ydl:</span><br><span class="line">                    ydl.download([url])</span><br><span class="line">                    </span><br><span class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                <span class="keyword">if</span> progress_callback:</span><br><span class="line">                    progress_callback(task_id, <span class="number">0</span>, TaskStatus.FAILED, <span class="literal">None</span>, <span class="built_in">str</span>(e))</span><br><span class="line">        </span><br><span class="line">        thread = threading.Thread(target=download_thread)</span><br><span class="line">        thread.daemon = <span class="literal">True</span></span><br><span class="line">        thread.start()</span><br><span class="line">        <span class="keyword">return</span> thread</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_progress_hook</span>(<span class="params">self, task_id: <span class="built_in">int</span>, progress_callback: <span class="type">Callable</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Progress tracking hook for yt-dlp&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">hook</span>(<span class="params">d</span>):</span><br><span class="line">            <span class="keyword">if</span> d[<span class="string">&#x27;status&#x27;</span>] == <span class="string">&#x27;downloading&#x27;</span>:</span><br><span class="line">                <span class="keyword">if</span> <span class="string">&#x27;total_bytes&#x27;</span> <span class="keyword">in</span> d:</span><br><span class="line">                    progress = (d[<span class="string">&#x27;downloaded_bytes&#x27;</span>] / d[<span class="string">&#x27;total_bytes&#x27;</span>]) * <span class="number">100</span></span><br><span class="line">                <span class="keyword">elif</span> <span class="string">&#x27;total_bytes_estimate&#x27;</span> <span class="keyword">in</span> d:</span><br><span class="line">                    progress = (d[<span class="string">&#x27;downloaded_bytes&#x27;</span>] / d[<span class="string">&#x27;total_bytes_estimate&#x27;</span>]) * <span class="number">100</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    progress = <span class="number">0</span></span><br><span class="line">                </span><br><span class="line">                progress_callback(task_id, progress, TaskStatus.DOWNLOADING)</span><br><span class="line">                </span><br><span class="line">            <span class="keyword">elif</span> d[<span class="string">&#x27;status&#x27;</span>] == <span class="string">&#x27;finished&#x27;</span>:</span><br><span class="line">                filename = d.get(<span class="string">&#x27;filename&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> filename:</span><br><span class="line">                    progress_callback(task_id, <span class="number">100.0</span>, TaskStatus.COMPLETED, filename)</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> hook</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># app/youtube_downloader.py</span><br><span class="hljs-keyword">import</span> yt_dlp<br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> threading<br><span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> <span class="hljs-type">Dict</span>, <span class="hljs-type">Any</span>, <span class="hljs-type">Callable</span>, <span class="hljs-type">Optional</span><br><span class="hljs-keyword">from</span> models <span class="hljs-keyword">import</span> TaskStatus<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">YouTubeDownloader</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, download_dir: <span class="hljs-built_in">str</span> = <span class="hljs-string">&quot;./downloads&quot;</span></span>):<br>        <span class="hljs-variable language_">self</span>.download_dir = download_dir<br>        <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_video_info</span>(<span class="hljs-params">self, url: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-type">Dict</span>[<span class="hljs-built_in">str</span>, <span class="hljs-type">Any</span>]:<br>        <span class="hljs-string">&quot;&quot;&quot;Extract video information without downloading&quot;&quot;&quot;</span><br>        ydl_opts = &#123;<br>            <span class="hljs-string">&#x27;quiet&#x27;</span>: <span class="hljs-literal">True</span>,<br>            <span class="hljs-string">&#x27;no_warnings&#x27;</span>: <span class="hljs-literal">True</span>,<br>            <span class="hljs-string">&#x27;extract_flat&#x27;</span>: <span class="hljs-literal">False</span>,<br>            <span class="hljs-string">&#x27;extractor_args&#x27;</span>: &#123;<br>                <span class="hljs-string">&#x27;youtube&#x27;</span>: &#123;<br>                    <span class="hljs-string">&#x27;player_client&#x27;</span>: [<span class="hljs-string">&#x27;tv&#x27;</span>, <span class="hljs-string">&#x27;mweb&#x27;</span>, <span class="hljs-string">&#x27;web&#x27;</span>],<br>                &#125;<br>            &#125;,<br>            <span class="hljs-string">&#x27;http_headers&#x27;</span>: &#123;<br>                <span class="hljs-string">&#x27;User-Agent&#x27;</span>: <span class="hljs-string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&#x27;</span><br>            &#125;,<br>            <span class="hljs-string">&#x27;ignoreerrors&#x27;</span>: <span class="hljs-literal">True</span><br>        &#125;<br>        <br>        <span class="hljs-keyword">with</span> yt_dlp.YoutubeDL(ydl_opts) <span class="hljs-keyword">as</span> ydl:<br>            info = ydl.extract_info(url, download=<span class="hljs-literal">False</span>)<br>            <br>            <span class="hljs-comment"># Process and categorize available formats</span><br>            formats = <span class="hljs-variable language_">self</span>._process_formats(info.get(<span class="hljs-string">&#x27;formats&#x27;</span>, []))<br>            <br>            <span class="hljs-keyword">return</span> &#123;<br>                <span class="hljs-string">&#x27;title&#x27;</span>: info.get(<span class="hljs-string">&#x27;title&#x27;</span>, <span class="hljs-string">&#x27;Unknown&#x27;</span>),<br>                <span class="hljs-string">&#x27;duration&#x27;</span>: info.get(<span class="hljs-string">&#x27;duration&#x27;</span>, <span class="hljs-number">0</span>),<br>                <span class="hljs-string">&#x27;uploader&#x27;</span>: info.get(<span class="hljs-string">&#x27;uploader&#x27;</span>, <span class="hljs-string">&#x27;Unknown&#x27;</span>),<br>                <span class="hljs-string">&#x27;view_count&#x27;</span>: info.get(<span class="hljs-string">&#x27;view_count&#x27;</span>, <span class="hljs-number">0</span>),<br>                <span class="hljs-string">&#x27;thumbnail&#x27;</span>: info.get(<span class="hljs-string">&#x27;thumbnail&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>),<br>                <span class="hljs-string">&#x27;webpage_url&#x27;</span>: info.get(<span class="hljs-string">&#x27;webpage_url&#x27;</span>, url),<br>                <span class="hljs-string">&#x27;formats&#x27;</span>: formats<br>            &#125;<br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">download_video</span>(<span class="hljs-params">self, task_id: <span class="hljs-built_in">int</span>, url: <span class="hljs-built_in">str</span>, format_id: <span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;best&#x27;</span>, </span><br><span class="hljs-params">                      progress_callback: <span class="hljs-type">Optional</span>[<span class="hljs-type">Callable</span>] = <span class="hljs-literal">None</span></span>):<br>        <span class="hljs-string">&quot;&quot;&quot;Download video in a separate thread&quot;&quot;&quot;</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">download_thread</span>():<br>            <span class="hljs-keyword">try</span>:<br>                <span class="hljs-comment"># Ensure download directory exists</span><br>                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(<span class="hljs-variable language_">self</span>.download_dir):<br>                    os.makedirs(<span class="hljs-variable language_">self</span>.download_dir)<br>                <br>                <span class="hljs-comment"># Configure yt-dlp options</span><br>                ydl_opts = &#123;<br>                    <span class="hljs-string">&#x27;format&#x27;</span>: <span class="hljs-variable language_">self</span>._get_format_selector(format_id),<br>                    <span class="hljs-string">&#x27;outtmpl&#x27;</span>: os.path.join(<span class="hljs-variable language_">self</span>.download_dir, <span class="hljs-string">&quot;%(title)s-%(id)s.%(ext)s&quot;</span>),<br>                    <span class="hljs-string">&#x27;writeinfojson&#x27;</span>: <span class="hljs-literal">True</span>,<br>                    <span class="hljs-string">&#x27;merge_output_format&#x27;</span>: <span class="hljs-string">&#x27;mp4&#x27;</span>,<br>                    <span class="hljs-string">&#x27;prefer_ffmpeg&#x27;</span>: <span class="hljs-literal">True</span>,<br>                    <span class="hljs-string">&#x27;extractor_args&#x27;</span>: &#123;<br>                        <span class="hljs-string">&#x27;youtube&#x27;</span>: &#123;<br>                            <span class="hljs-string">&#x27;player_client&#x27;</span>: [<span class="hljs-string">&#x27;tv&#x27;</span>, <span class="hljs-string">&#x27;mweb&#x27;</span>, <span class="hljs-string">&#x27;web&#x27;</span>],<br>                        &#125;<br>                    &#125;,<br>                    <span class="hljs-string">&#x27;retries&#x27;</span>: <span class="hljs-number">3</span>,<br>                    <span class="hljs-string">&#x27;fragment_retries&#x27;</span>: <span class="hljs-number">3</span>,<br>                    <span class="hljs-string">&#x27;socket_timeout&#x27;</span>: <span class="hljs-number">30</span>,<br>                &#125;<br>                <br>                <span class="hljs-keyword">if</span> progress_callback:<br>                    ydl_opts[<span class="hljs-string">&#x27;progress_hooks&#x27;</span>] = [<span class="hljs-variable language_">self</span>._progress_hook(task_id, progress_callback)]<br>                <br>                <span class="hljs-keyword">with</span> yt_dlp.YoutubeDL(ydl_opts) <span class="hljs-keyword">as</span> ydl:<br>                    ydl.download([url])<br>                    <br>            <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>                <span class="hljs-keyword">if</span> progress_callback:<br>                    progress_callback(task_id, <span class="hljs-number">0</span>, TaskStatus.FAILED, <span class="hljs-literal">None</span>, <span class="hljs-built_in">str</span>(e))<br>        <br>        thread = threading.Thread(target=download_thread)<br>        thread.daemon = <span class="hljs-literal">True</span><br>        thread.start()<br>        <span class="hljs-keyword">return</span> thread<br>    <br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">_progress_hook</span>(<span class="hljs-params">self, task_id: <span class="hljs-built_in">int</span>, progress_callback: <span class="hljs-type">Callable</span></span>):<br>        <span class="hljs-string">&quot;&quot;&quot;Progress tracking hook for yt-dlp&quot;&quot;&quot;</span><br>        <span class="hljs-keyword">def</span> <span class="hljs-title function_">hook</span>(<span class="hljs-params">d</span>):<br>            <span class="hljs-keyword">if</span> d[<span class="hljs-string">&#x27;status&#x27;</span>] == <span class="hljs-string">&#x27;downloading&#x27;</span>:<br>                <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;total_bytes&#x27;</span> <span class="hljs-keyword">in</span> d:<br>                    progress = (d[<span class="hljs-string">&#x27;downloaded_bytes&#x27;</span>] / d[<span class="hljs-string">&#x27;total_bytes&#x27;</span>]) * <span class="hljs-number">100</span><br>                <span class="hljs-keyword">elif</span> <span class="hljs-string">&#x27;total_bytes_estimate&#x27;</span> <span class="hljs-keyword">in</span> d:<br>                    progress = (d[<span class="hljs-string">&#x27;downloaded_bytes&#x27;</span>] / d[<span class="hljs-string">&#x27;total_bytes_estimate&#x27;</span>]) * <span class="hljs-number">100</span><br>                <span class="hljs-keyword">else</span>:<br>                    progress = <span class="hljs-number">0</span><br>                <br>                progress_callback(task_id, progress, TaskStatus.DOWNLOADING)<br>                <br>            <span class="hljs-keyword">elif</span> d[<span class="hljs-string">&#x27;status&#x27;</span>] == <span class="hljs-string">&#x27;finished&#x27;</span>:<br>                filename = d.get(<span class="hljs-string">&#x27;filename&#x27;</span>)<br>                <span class="hljs-keyword">if</span> filename:<br>                    progress_callback(task_id, <span class="hljs-number">100.0</span>, TaskStatus.COMPLETED, filename)<br>                <br>        <span class="hljs-keyword">return</span> hook<br></code></pre></td></tr></table></figure>
 
 <h2 id="🚀-FastAPI-Application"><a href="#🚀-FastAPI-Application" class="headerlink" title="🚀 FastAPI Application"></a>🚀 FastAPI Application</h2><p>Now let&#39;s build our FastAPI application:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app/main.py</span></span><br><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI, Depends, HTTPException, Request</span><br><span class="line"><span class="keyword">from</span> fastapi.staticfiles <span class="keyword">import</span> StaticFiles</span><br><span class="line"><span class="keyword">from</span> fastapi.responses <span class="keyword">import</span> HTMLResponse, FileResponse</span><br><span class="line"><span class="keyword">from</span> fastapi.templating <span class="keyword">import</span> Jinja2Templates</span><br><span class="line"><span class="keyword">from</span> fastapi.middleware.cors <span class="keyword">import</span> CORSMiddleware</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.orm <span class="keyword">import</span> Session</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span>, <span class="type">Optional</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> database <span class="keyword">import</span> get_db, create_tables, DOWNLOAD_DIR</span><br><span class="line"><span class="keyword">from</span> models <span class="keyword">import</span> DownloadTask, TaskStatus</span><br><span class="line"><span class="keyword">from</span> youtube_downloader <span class="keyword">import</span> YouTubeDownloader</span><br><span class="line"><span class="keyword">from</span> pydantic <span class="keyword">import</span> BaseModel</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize FastAPI app</span></span><br><span class="line">app = FastAPI(title=<span class="string">&quot;YouTube Downloader&quot;</span>, description=<span class="string">&quot;Modern YouTube video downloader&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add CORS middleware</span></span><br><span class="line">app.add_middleware(</span><br><span class="line">    CORSMiddleware,</span><br><span class="line">    allow_origins=[<span class="string">&quot;*&quot;</span>],</span><br><span class="line">    allow_credentials=<span class="literal">True</span>,</span><br><span class="line">    allow_methods=[<span class="string">&quot;*&quot;</span>],</span><br><span class="line">    allow_headers=[<span class="string">&quot;*&quot;</span>],</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialize components</span></span><br><span class="line">downloader = YouTubeDownloader(DOWNLOAD_DIR)</span><br><span class="line">templates = Jinja2Templates(directory=<span class="string">&quot;templates&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mount static files</span></span><br><span class="line">app.mount(<span class="string">&quot;/static&quot;</span>, StaticFiles(directory=<span class="string">&quot;static&quot;</span>), name=<span class="string">&quot;static&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pydantic models for API</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">VideoInfoRequest</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    url: <span class="built_in">str</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DownloadRequest</span>(<span class="title class_ inherited__">BaseModel</span>):</span><br><span class="line">    url: <span class="built_in">str</span></span><br><span class="line">    format_id: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="string">&quot;best&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Progress callback function</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">update_task_progress</span>(<span class="params">task_id: <span class="built_in">int</span>, progress: <span class="built_in">float</span>, status: TaskStatus, </span></span><br><span class="line"><span class="params">                        file_path: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span>, error_message: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Update task progress in database&quot;&quot;&quot;</span></span><br><span class="line">    db = <span class="built_in">next</span>(get_db())</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        task = db.query(DownloadTask).<span class="built_in">filter</span>(DownloadTask.<span class="built_in">id</span> == task_id).first()</span><br><span class="line">        <span class="keyword">if</span> task:</span><br><span class="line">            task.progress = progress</span><br><span class="line">            task.status = status</span><br><span class="line">            <span class="keyword">if</span> file_path:</span><br><span class="line">                <span class="comment"># Handle file path properly</span></span><br><span class="line">                <span class="keyword">if</span> os.path.isabs(file_path):</span><br><span class="line">                    task.file_path = os.path.relpath(file_path, DOWNLOAD_DIR)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    task.file_path = file_path</span><br><span class="line">                </span><br><span class="line">                <span class="comment"># Get file size</span></span><br><span class="line">                full_path = os.path.join(DOWNLOAD_DIR, task.file_path)</span><br><span class="line">                <span class="keyword">if</span> os.path.exists(full_path):</span><br><span class="line">                    task.file_size = os.path.getsize(full_path)</span><br><span class="line">                    </span><br><span class="line">            <span class="keyword">if</span> error_message:</span><br><span class="line">                task.error_message = error_message</span><br><span class="line">            db.commit()</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        db.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># API Routes</span></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/&quot;</span>, response_class=HTMLResponse</span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">read_root</span>(<span class="params">request: Request</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Serve the main page&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> templates.TemplateResponse(<span class="string">&quot;index.html&quot;</span>, &#123;<span class="string">&quot;request&quot;</span>: request&#125;)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.post(<span class="params"><span class="string">&quot;/api/video-info&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">get_video_info</span>(<span class="params">request: VideoInfoRequest</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Get video information&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        info = downloader.get_video_info(request.url)</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&quot;success&quot;</span>: <span class="literal">True</span>, <span class="string">&quot;data&quot;</span>: info&#125;</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">raise</span> HTTPException(status_code=<span class="number">400</span>, detail=<span class="built_in">str</span>(e))</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.post(<span class="params"><span class="string">&quot;/api/download&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">start_download</span>(<span class="params">request: DownloadRequest, db: Session = Depends(<span class="params">get_db</span>)</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Start download task&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># Get video info first</span></span><br><span class="line">        video_info = downloader.get_video_info(request.url)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Create task record</span></span><br><span class="line">        task = DownloadTask(</span><br><span class="line">            url=request.url,</span><br><span class="line">            title=video_info.get(<span class="string">&#x27;title&#x27;</span>),</span><br><span class="line">            format_id=request.format_id,</span><br><span class="line">            status=TaskStatus.PENDING</span><br><span class="line">        )</span><br><span class="line">        db.add(task)</span><br><span class="line">        db.commit()</span><br><span class="line">        db.refresh(task)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Start download</span></span><br><span class="line">        downloader.download_video(</span><br><span class="line">            task.<span class="built_in">id</span>, </span><br><span class="line">            request.url, </span><br><span class="line">            request.format_id,</span><br><span class="line">            update_task_progress</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&quot;success&quot;</span>: <span class="literal">True</span>, <span class="string">&quot;task_id&quot;</span>: task.<span class="built_in">id</span>, <span class="string">&quot;message&quot;</span>: <span class="string">&quot;Download started&quot;</span>&#125;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">raise</span> HTTPException(status_code=<span class="number">400</span>, detail=<span class="built_in">str</span>(e))</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/api/tasks&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">get_tasks</span>(<span class="params">db: Session = Depends(<span class="params">get_db</span>)</span>) -&gt; <span class="type">List</span>[<span class="built_in">dict</span>]:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Get all download tasks&quot;&quot;&quot;</span></span><br><span class="line">    tasks = db.query(DownloadTask).order_by(DownloadTask.created_at.desc()).<span class="built_in">all</span>()</span><br><span class="line">    <span class="keyword">return</span> [task.to_dict() <span class="keyword">for</span> task <span class="keyword">in</span> tasks]</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/api/download-file/&#123;task_id&#125;&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">download_file</span>(<span class="params">task_id: <span class="built_in">int</span>, db: Session = Depends(<span class="params">get_db</span>)</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Serve downloaded file&quot;&quot;&quot;</span></span><br><span class="line">    task = db.query(DownloadTask).<span class="built_in">filter</span>(DownloadTask.<span class="built_in">id</span> == task_id).first()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> task <span class="keyword">or</span> <span class="keyword">not</span> task.file_path:</span><br><span class="line">        <span class="keyword">raise</span> HTTPException(status_code=<span class="number">404</span>, detail=<span class="string">&quot;File not found&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    file_path = os.path.join(DOWNLOAD_DIR, task.file_path)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(file_path):</span><br><span class="line">        <span class="keyword">raise</span> HTTPException(status_code=<span class="number">404</span>, detail=<span class="string">&quot;File not found&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> FileResponse(</span><br><span class="line">        file_path,</span><br><span class="line">        filename=os.path.basename(file_path),</span><br><span class="line">        media_type=<span class="string">&#x27;application/octet-stream&#x27;</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">import</span> uvicorn</span><br><span class="line">    uvicorn.run(<span class="string">&quot;main:app&quot;</span>, host=<span class="string">&quot;127.0.0.1&quot;</span>, port=<span class="number">8000</span>, reload=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># app/main.py</span><br><span class="hljs-keyword">from</span> fastapi <span class="hljs-keyword">import</span> FastAPI, Depends, HTTPException, Request<br><span class="hljs-keyword">from</span> fastapi.staticfiles <span class="hljs-keyword">import</span> StaticFiles<br><span class="hljs-keyword">from</span> fastapi.responses <span class="hljs-keyword">import</span> HTMLResponse, FileResponse<br><span class="hljs-keyword">from</span> fastapi.templating <span class="hljs-keyword">import</span> Jinja2Templates<br><span class="hljs-keyword">from</span> fastapi.middleware.cors <span class="hljs-keyword">import</span> CORSMiddleware<br><span class="hljs-keyword">from</span> sqlalchemy.orm <span class="hljs-keyword">import</span> Session<br><span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> <span class="hljs-type">List</span>, <span class="hljs-type">Optional</span><br><span class="hljs-keyword">import</span> os<br><br><span class="hljs-keyword">from</span> database <span class="hljs-keyword">import</span> get_db, create_tables, DOWNLOAD_DIR<br><span class="hljs-keyword">from</span> models <span class="hljs-keyword">import</span> DownloadTask, TaskStatus<br><span class="hljs-keyword">from</span> youtube_downloader <span class="hljs-keyword">import</span> YouTubeDownloader<br><span class="hljs-keyword">from</span> pydantic <span class="hljs-keyword">import</span> BaseModel<br><br><span class="hljs-comment"># Initialize FastAPI app</span><br>app = FastAPI(title=<span class="hljs-string">&quot;YouTube Downloader&quot;</span>, description=<span class="hljs-string">&quot;Modern YouTube video downloader&quot;</span>)<br><br><span class="hljs-comment"># Add CORS middleware</span><br>app.add_middleware(<br>    CORSMiddleware,<br>    allow_origins=[<span class="hljs-string">&quot;*&quot;</span>],<br>    allow_credentials=<span class="hljs-literal">True</span>,<br>    allow_methods=[<span class="hljs-string">&quot;*&quot;</span>],<br>    allow_headers=[<span class="hljs-string">&quot;*&quot;</span>],<br>)<br><br><span class="hljs-comment"># Initialize components</span><br>downloader = YouTubeDownloader(DOWNLOAD_DIR)<br>templates = Jinja2Templates(directory=<span class="hljs-string">&quot;templates&quot;</span>)<br><br><span class="hljs-comment"># Mount static files</span><br>app.mount(<span class="hljs-string">&quot;/static&quot;</span>, StaticFiles(directory=<span class="hljs-string">&quot;static&quot;</span>), name=<span class="hljs-string">&quot;static&quot;</span>)<br><br><span class="hljs-comment"># Pydantic models for API</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">VideoInfoRequest</span>(<span class="hljs-title class_ inherited__">BaseModel</span>):<br>    url: <span class="hljs-built_in">str</span><br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">DownloadRequest</span>(<span class="hljs-title class_ inherited__">BaseModel</span>):<br>    url: <span class="hljs-built_in">str</span><br>    format_id: <span class="hljs-type">Optional</span>[<span class="hljs-built_in">str</span>] = <span class="hljs-string">&quot;best&quot;</span><br><br><span class="hljs-comment"># Progress callback function</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">update_task_progress</span>(<span class="hljs-params">task_id: <span class="hljs-built_in">int</span>, progress: <span class="hljs-built_in">float</span>, status: TaskStatus, </span><br><span class="hljs-params">                        file_path: <span class="hljs-type">Optional</span>[<span class="hljs-built_in">str</span>] = <span class="hljs-literal">None</span>, error_message: <span class="hljs-type">Optional</span>[<span class="hljs-built_in">str</span>] = <span class="hljs-literal">None</span></span>):<br>    <span class="hljs-string">&quot;&quot;&quot;Update task progress in database&quot;&quot;&quot;</span><br>    db = <span class="hljs-built_in">next</span>(get_db())<br>    <span class="hljs-keyword">try</span>:<br>        task = db.query(DownloadTask).<span class="hljs-built_in">filter</span>(DownloadTask.<span class="hljs-built_in">id</span> == task_id).first()<br>        <span class="hljs-keyword">if</span> task:<br>            task.progress = progress<br>            task.status = status<br>            <span class="hljs-keyword">if</span> file_path:<br>                <span class="hljs-comment"># Handle file path properly</span><br>                <span class="hljs-keyword">if</span> os.path.isabs(file_path):<br>                    task.file_path = os.path.relpath(file_path, DOWNLOAD_DIR)<br>                <span class="hljs-keyword">else</span>:<br>                    task.file_path = file_path<br>                <br>                <span class="hljs-comment"># Get file size</span><br>                full_path = os.path.join(DOWNLOAD_DIR, task.file_path)<br>                <span class="hljs-keyword">if</span> os.path.exists(full_path):<br>                    task.file_size = os.path.getsize(full_path)<br>                    <br>            <span class="hljs-keyword">if</span> error_message:<br>                task.error_message = error_message<br>            db.commit()<br>    <span class="hljs-keyword">finally</span>:<br>        db.close()<br><br><span class="hljs-comment"># API Routes</span><br><span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/&quot;</span>, response_class=HTMLResponse</span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">read_root</span>(<span class="hljs-params">request: Request</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;Serve the main page&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">return</span> templates.TemplateResponse(<span class="hljs-string">&quot;index.html&quot;</span>, &#123;<span class="hljs-string">&quot;request&quot;</span>: request&#125;)<br><br><span class="hljs-meta">@app.post(<span class="hljs-params"><span class="hljs-string">&quot;/api/video-info&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_video_info</span>(<span class="hljs-params">request: VideoInfoRequest</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;Get video information&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">try</span>:<br>        info = downloader.get_video_info(request.url)<br>        <span class="hljs-keyword">return</span> &#123;<span class="hljs-string">&quot;success&quot;</span>: <span class="hljs-literal">True</span>, <span class="hljs-string">&quot;data&quot;</span>: info&#125;<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-keyword">raise</span> HTTPException(status_code=<span class="hljs-number">400</span>, detail=<span class="hljs-built_in">str</span>(e))<br><br><span class="hljs-meta">@app.post(<span class="hljs-params"><span class="hljs-string">&quot;/api/download&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">start_download</span>(<span class="hljs-params">request: DownloadRequest, db: Session = Depends(<span class="hljs-params">get_db</span>)</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;Start download task&quot;&quot;&quot;</span><br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-comment"># Get video info first</span><br>        video_info = downloader.get_video_info(request.url)<br>        <br>        <span class="hljs-comment"># Create task record</span><br>        task = DownloadTask(<br>            url=request.url,<br>            title=video_info.get(<span class="hljs-string">&#x27;title&#x27;</span>),<br>            format_id=request.format_id,<br>            status=TaskStatus.PENDING<br>        )<br>        db.add(task)<br>        db.commit()<br>        db.refresh(task)<br>        <br>        <span class="hljs-comment"># Start download</span><br>        downloader.download_video(<br>            task.<span class="hljs-built_in">id</span>, <br>            request.url, <br>            request.format_id,<br>            update_task_progress<br>        )<br>        <br>        <span class="hljs-keyword">return</span> &#123;<span class="hljs-string">&quot;success&quot;</span>: <span class="hljs-literal">True</span>, <span class="hljs-string">&quot;task_id&quot;</span>: task.<span class="hljs-built_in">id</span>, <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;Download started&quot;</span>&#125;<br>        <br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        <span class="hljs-keyword">raise</span> HTTPException(status_code=<span class="hljs-number">400</span>, detail=<span class="hljs-built_in">str</span>(e))<br><br><span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/api/tasks&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_tasks</span>(<span class="hljs-params">db: Session = Depends(<span class="hljs-params">get_db</span>)</span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">dict</span>]:<br>    <span class="hljs-string">&quot;&quot;&quot;Get all download tasks&quot;&quot;&quot;</span><br>    tasks = db.query(DownloadTask).order_by(DownloadTask.created_at.desc()).<span class="hljs-built_in">all</span>()<br>    <span class="hljs-keyword">return</span> [task.to_dict() <span class="hljs-keyword">for</span> task <span class="hljs-keyword">in</span> tasks]<br><br><span class="hljs-meta">@app.get(<span class="hljs-params"><span class="hljs-string">&quot;/api/download-file/&#123;task_id&#125;&quot;</span></span>)</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">download_file</span>(<span class="hljs-params">task_id: <span class="hljs-built_in">int</span>, db: Session = Depends(<span class="hljs-params">get_db</span>)</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;Serve downloaded file&quot;&quot;&quot;</span><br>    task = db.query(DownloadTask).<span class="hljs-built_in">filter</span>(DownloadTask.<span class="hljs-built_in">id</span> == task_id).first()<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> task <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> task.file_path:<br>        <span class="hljs-keyword">raise</span> HTTPException(status_code=<span class="hljs-number">404</span>, detail=<span class="hljs-string">&quot;File not found&quot;</span>)<br>    <br>    file_path = os.path.join(DOWNLOAD_DIR, task.file_path)<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(file_path):<br>        <span class="hljs-keyword">raise</span> HTTPException(status_code=<span class="hljs-number">404</span>, detail=<span class="hljs-string">&quot;File not found&quot;</span>)<br>    <br>    <span class="hljs-keyword">return</span> FileResponse(<br>        file_path,<br>        filename=os.path.basename(file_path),<br>        media_type=<span class="hljs-string">&#x27;application/octet-stream&#x27;</span><br>    )<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    <span class="hljs-keyword">import</span> uvicorn<br>    uvicorn.run(<span class="hljs-string">&quot;main:app&quot;</span>, host=<span class="hljs-string">&quot;127.0.0.1&quot;</span>, port=<span class="hljs-number">8000</span>, reload=<span class="hljs-literal">True</span>)<br><br></code></pre></td></tr></table></figure>
 
 <h3 id="4-Download-Web-Preview"><a href="#4-Download-Web-Preview" class="headerlink" title="4. Download Web Preview"></a>4. <strong>Download Web Preview</strong></h3><p>When running the script, you should see output like:</p>
 <h4 id="Analyze-video-url"><a href="#Analyze-video-url" class="headerlink" title="Analyze video url"></a>Analyze video url</h4><!-- ![Logo](Building-a-YouTube-Downloader-with-FastAPI/create_new.png) -->
-<img src="/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/create_new.png" class="" title="create_new">
+<img src="/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/create_new.png" srcset="/img/loading.gif" lazyload class="" title="create_new">
 
 <h4 id="Select-your-preferred-format"><a href="#Select-your-preferred-format" class="headerlink" title="Select your preferred format"></a>Select your preferred format</h4><!-- ![Logo](Building-a-YouTube-Downloader-with-FastAPI/formats.png) -->
-<img src="/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/formats.png" class="" title="formats">
+<img src="/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/formats.png" srcset="/img/loading.gif" lazyload class="" title="formats">
 
 <h4 id="Check-download-progress"><a href="#Check-download-progress" class="headerlink" title="Check download progress"></a>Check download progress</h4><!-- ![Logo](Building-a-YouTube-Downloader-with-FastAPI/download_progress.png) -->
-<img src="/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/download_progress.png" class="" title="download_progress">
+<img src="/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/download_progress.png" srcset="/img/loading.gif" lazyload class="" title="download_progress">
 
 
 
 <h3 id="5-Performance-Testing"><a href="#5-Performance-Testing" class="headerlink" title="5. Performance Testing"></a>5. <strong>Performance Testing</strong></h3><p>Monitor server performance during downloads:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Check server logs for performance metrics</span></span><br><span class="line">INFO:     <span class="string">&quot;POST /api/video-info HTTP/1.1&quot;</span> 200 OK</span><br><span class="line">INFO:     <span class="string">&quot;POST /api/download HTTP/1.1&quot;</span> 200 OK</span><br><span class="line">INFO:     <span class="string">&quot;GET /api/tasks/1 HTTP/1.1&quot;</span> 200 OK</span><br><span class="line">📥 Starting download <span class="keyword">for</span> task 1</span><br><span class="line">🔗 URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ</span><br><span class="line">📋 Format: worst</span><br><span class="line">📂 Output template: ./downloads/%(title)s-%(<span class="built_in">id</span>)s.%(ext)s</span><br><span class="line">🚀 Starting yt-dlp download...</span><br><span class="line">✅ File saved: ./downloads/Rick Astley - Never Gonna Give You Up-dQw4w9WgXcQ.mp4 (Size: 3847291 bytes)</span><br><span class="line">✅ Download completed <span class="keyword">for</span> task 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Check server logs for performance metrics</span><br>INFO:     <span class="hljs-string">&quot;POST /api/video-info HTTP/1.1&quot;</span> 200 OK<br>INFO:     <span class="hljs-string">&quot;POST /api/download HTTP/1.1&quot;</span> 200 OK<br>INFO:     <span class="hljs-string">&quot;GET /api/tasks/1 HTTP/1.1&quot;</span> 200 OK<br>📥 Starting download <span class="hljs-keyword">for</span> task 1<br>🔗 URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ<br>📋 Format: worst<br>📂 Output template: ./downloads/%(title)s-%(<span class="hljs-built_in">id</span>)s.%(ext)s<br>🚀 Starting yt-dlp download...<br>✅ File saved: ./downloads/Rick Astley - Never Gonna Give You Up-dQw4w9WgXcQ.mp4 (Size: 3847291 bytes)<br>✅ Download completed <span class="hljs-keyword">for</span> task 1<br></code></pre></td></tr></table></figure>
 
 
 
@@ -311,219 +350,389 @@
 <hr>
 <p><em>Happy coding! 🚀, see you🚀</em> </p>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web-Development/" class="category-chain-item">Web Development</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Web-Development/Python/" class="category-chain-item">Python</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Web-Development/Python/FastAPI/" class="category-chain-item">FastAPI</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/FastAPI/" class="print-no-link">#FastAPI</a>
+      
+        <a href="/tags/Python/" class="print-no-link">#Python</a>
+      
+        <a href="/tags/yt-dlp/" class="print-no-link">#yt-dlp</a>
+      
+        <a href="/tags/YouTube/" class="print-no-link">#YouTube</a>
+      
+        <a href="/tags/Web-Development/" class="print-no-link">#Web Development</a>
+      
+        <a href="/tags/API/" class="print-no-link">#API</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Building a YouTube Downloader with FastAPI and yt-dlp</div>
+      <div>https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>GZTHSS</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>June 7, 2025</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/" title="Asynchronous Programming in FastAPI What You Need to Know">
+                        <span class="hidden-mobile">Asynchronous Programming in FastAPI What You Need to Know</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
 
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/FastAPI/" rel="tag"># FastAPI</a>
-              <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/yt-dlp/" rel="tag"># yt-dlp</a>
-              <a href="/tags/YouTube/" rel="tag"># YouTube</a>
-              <a href="/tags/Web-Development/" rel="tag"># Web Development</a>
-              <a href="/tags/API/" rel="tag"># API</a>
-          </div>
-
-        
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
 
 
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/" rel="prev" title="Asynchronous Programming in FastAPI What You Need to Know">
-      <i class="fa fa-chevron-left"></i> Asynchronous Programming in FastAPI What You Need to Know
-    </a></div>
-      <div class="post-nav-item"></div>
+
+  </aside>
+
+
     </div>
-      </footer>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
-  </article>
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
   
   
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
-          </div>
-          
 
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
       }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
     });
-  }
+  });
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
+  <script>Fluid.plugins.codeWidget();</script>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Building-a-YouTube-Downloader-with-FastAPI-and-yt-dlp"><span class="nav-number">1.</span> <span class="nav-text">Building a YouTube Downloader with FastAPI and yt-dlp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8E%AF-What-We-ll-Build"><span class="nav-number">1.1.</span> <span class="nav-text">🎯 What We&#39;ll Build</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%9B%A0%EF%B8%8F-Tech-Stack"><span class="nav-number">1.2.</span> <span class="nav-text">🛠️ Tech Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%8B-Prerequisites"><span class="nav-number">1.3.</span> <span class="nav-text">📋 Prerequisites</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8F%97%EF%B8%8F-Project-Structure"><span class="nav-number">1.4.</span> <span class="nav-text">🏗️ Project Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%97%84%EF%B8%8F-Database-Models"><span class="nav-number">1.5.</span> <span class="nav-text">🗄️ Database Models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8E%AC-YouTube-Downloader-Core"><span class="nav-number">1.6.</span> <span class="nav-text">🎬 YouTube Downloader Core</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%9A%80-FastAPI-Application"><span class="nav-number">1.7.</span> <span class="nav-text">🚀 FastAPI Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Download-Web-Preview"><span class="nav-number">1.7.1.</span> <span class="nav-text">4. Download Web Preview</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Analyze-video-url"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">Analyze video url</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Select-your-preferred-format"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">Select your preferred format</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Check-download-progress"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">Check download progress</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Performance-Testing"><span class="nav-number">1.7.2.</span> <span class="nav-text">5. Performance Testing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%AE-Future-Enhancements"><span class="nav-number">1.8.</span> <span class="nav-text">🔮 Future Enhancements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%9D-Conclusion"><span class="nav-number">1.9.</span> <span class="nav-text">📝 Conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%97-Resources"><span class="nav-number">1.10.</span> <span class="nav-text">🔗 Resources</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">GZTHSS</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">6</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2025</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">GZTHSS</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="Total Visitors">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="Total Views">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
 
-<script src="/js/utils.js"></script>
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
 
-<script src="/js/motion.js"></script>
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
 
-<script src="/js/schemes/muse.js"></script>
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
-<script src="/js/next-boot.js"></script>
 
 
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
