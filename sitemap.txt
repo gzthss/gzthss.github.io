@@ -24,6 +24,8 @@ https://gzthss.github.io/tags/SQLAlchemy/
 https://gzthss.github.io/tags/JWT/
 https://gzthss.github.io/tags/Backend/
 https://gzthss.github.io/tags/CentOS/
+https://gzthss.github.io/tags/centos/
+https://gzthss.github.io/tags/openssl/
 https://gzthss.github.io/categories/Web-Development/
 https://gzthss.github.io/categories/Web-Development/Python/
 https://gzthss.github.io/categories/Web-Development/Python/FastAPI/
