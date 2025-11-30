@@ -103,11 +103,11 @@
       
       <tag>FastAPI</tag>
       
+      <tag>Async</tag>
+      
       <tag>SQLAlchemy</tag>
       
       <tag>JWT</tag>
-      
-      <tag>Async</tag>
       
     </tags>
     
@@ -128,11 +128,11 @@
       
       <tag>FastAPI</tag>
       
+      <tag>Async</tag>
+      
       <tag>SQLAlchemy</tag>
       
       <tag>JWT</tag>
-      
-      <tag>Async</tag>
       
     </tags>
     
@@ -174,9 +174,9 @@
     
     <tags>
       
-      <tag>CentOS</tag>
-      
       <tag>Python</tag>
+      
+      <tag>CentOS</tag>
       
     </tags>
     
