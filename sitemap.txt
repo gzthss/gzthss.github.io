@@ -20,12 +20,12 @@ https://gzthss.com/tags/httpx/
 https://gzthss.com/tags/asyncio/
 https://gzthss.com/tags/Postgresql/
 https://gzthss.com/tags/Python/
+https://gzthss.com/tags/Backend/
+https://gzthss.com/tags/CentOS/
 https://gzthss.com/tags/yt-dlp/
 https://gzthss.com/tags/YouTube/
 https://gzthss.com/tags/Web-Development/
 https://gzthss.com/tags/API/
-https://gzthss.com/tags/CentOS/
-https://gzthss.com/tags/Backend/
 https://gzthss.com/categories/Web-Development/
 https://gzthss.com/categories/Web-Development/Python/
 https://gzthss.com/categories/Web-Development/Python/FastAPI/

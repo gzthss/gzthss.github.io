@@ -180,6 +180,20 @@
   </url>
   
   <url>
+    <loc>https://gzthss.com/tags/Backend/</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.com/tags/CentOS/</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://gzthss.com/tags/yt-dlp/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -202,20 +216,6 @@
   
   <url>
     <loc>https://gzthss.com/tags/API/</loc>
-    <lastmod>2025-11-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.com/tags/CentOS/</loc>
-    <lastmod>2025-11-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.com/tags/Backend/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
