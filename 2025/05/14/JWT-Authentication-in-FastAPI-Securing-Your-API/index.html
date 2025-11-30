@@ -22,11 +22,11 @@
     <meta name="description" content="Learn to implement JWT authentication in FastAPI with password hashing and token validation.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="​JWT Authentication in FastAPI:Securing Your API​">
-<meta property="og:url" content="https://gzthss.github.io/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/index.html">
+<meta property="og:url" content="https://gzthss.com/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/index.html">
 <meta property="og:site_name" content="GZTHSS">
 <meta property="og:description" content="Learn to implement JWT authentication in FastAPI with password hashing and token validation.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gzthss.github.io/img/jwt_img.png">
+<meta property="og:image" content="https://gzthss.com/img/jwt_img.png">
 <meta property="article:published_time" content="2025-05-14T10:15:25.000Z">
 <meta property="article:modified_time" content="2025-06-14T08:50:12.739Z">
 <meta property="article:author" content="GZTHSS">
@@ -35,7 +35,7 @@
 <meta property="article:tag" content="JWT">
 <meta property="article:tag" content="Async">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://gzthss.github.io/img/jwt_img.png">
+<meta name="twitter:image" content="https://gzthss.com/img/jwt_img.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"gzthss.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"gzthss.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -309,7 +309,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">pip install <span class="hljs-string">&quot;python-jose[cryptography]&quot;</span> <span class="hljs-string">&quot;passlib[bcrypt]&quot;</span><br></code></pre></td></tr></table></figure>
 <p>​<strong>python-jose</strong>: Handles JWT creation&#x2F;validation (supports multiple algorithms like HS256).<br>​<strong>passlib</strong>: Securely hashes passwords using ​bcrypt​ (industry-standard for password storage).</p>
 <h5 id="​Step-2-Implementation-Steps"><a href="#​Step-2-Implementation-Steps" class="headerlink" title="​Step 2: Implementation Steps"></a>​Step 2: Implementation Steps</h5><p><strong>The code for this article is located in the GitHub repository named 03_fastapi_jwt.</strong><br><a target="_blank" rel="noopener" href="https://github.com/gzthss/fastapi_tutorial.git">https://github.com/gzthss/fastapi_tutorial.git</a></p>
-<p>For detailed information about the database section, please refer to my other article:<br><a target="_blank" rel="noopener" href="https://gzthss.com/2025/05/13/Advanced-FastAPI-Databases-Auth-and-Async/">Advanced FastAPI: Databases…</a></p>
+<p>For detailed information about the database section, please refer to my other article:<br><a href="https://gzthss.com/2025/05/13/Advanced-FastAPI-Databases-Auth-and-Async/">Advanced FastAPI: Databases…</a></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs sh">project/<br>├── db/<br>│ └── app.db            <span class="hljs-comment"># sqlite db</span><br>│ └── database.py       <span class="hljs-comment"># Database connection and session management</span><br>│ └── models.py         <span class="hljs-comment"># Database models and table definitions</span><br>│<br>├── routers/  <br>│   └── auth.py         <span class="hljs-comment"># Authentication routes  </span><br>│<br>├── utils/<br>│ └── security.py       <span class="hljs-comment"># JWT/password utilities       </span><br>│ └── schemas.py        <span class="hljs-comment"># Pydantic data models  </span><br>│ └── dependencies.py   <span class="hljs-comment"># Auth dependencies</span><br>│<br>└── main.py             <span class="hljs-comment"># Main app setup  </span><br></code></pre></td></tr></table></figure>
 
 <p><strong>routers&#x2F;auth.py</strong>​</p>
@@ -378,7 +378,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>​JWT Authentication in FastAPI:Securing Your API​</div>
-      <div>https://gzthss.github.io/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/</div>
+      <div>https://gzthss.com/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/</div>
     </div>
     <div class="license-meta">
       

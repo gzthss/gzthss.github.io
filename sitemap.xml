@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gzthss.github.io/2025/11/30/20251130-centos7%E6%9B%B4%E6%96%B0openssl/</loc>
+    <loc>https://gzthss.com/2025/11/30/20251130-centos7%E6%9B%B4%E6%96%B0openssl/</loc>
     
     <lastmod>2025-11-30</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/</loc>
+    <loc>https://gzthss.com/2025/06/07/Building-a-YouTube-Downloader-with-FastAPI/</loc>
     
     <lastmod>2025-11-30</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/2025/05/12/Building-a-FastAPI-RESTful-API-from-Scratch/</loc>
+    <loc>https://gzthss.com/2025/05/12/Building-a-FastAPI-RESTful-API-from-Scratch/</loc>
     
     <lastmod>2025-11-20</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/</loc>
+    <loc>https://gzthss.com/2025/05/21/Asynchronous-Programming-in-FastAPI-What-You-Need-to-Know/</loc>
     
     <lastmod>2025-11-20</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/2025/05/10/%E2%80%8BStep-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/</loc>
+    <loc>https://gzthss.com/2025/05/10/%E2%80%8BStep-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/</loc>
     
     <lastmod>2025-11-20</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/about/index.html</loc>
+    <loc>https://gzthss.com/about/index.html</loc>
     
     <lastmod>2025-06-15</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/</loc>
+    <loc>https://gzthss.com/2025/05/14/JWT-Authentication-in-FastAPI-Securing-Your-API/</loc>
     
     <lastmod>2025-06-14</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/2025/05/13/Advanced-FastAPI-Databases-Auth-and-Async/</loc>
+    <loc>https://gzthss.com/2025/05/13/Advanced-FastAPI-Databases-Auth-and-Async/</loc>
     
     <lastmod>2025-06-14</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/privacy-policy/index.html</loc>
+    <loc>https://gzthss.com/privacy-policy/index.html</loc>
     
     <lastmod>2025-05-10</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/archives/index.html</loc>
+    <loc>https://gzthss.com/archives/index.html</loc>
     
     <lastmod>2025-05-10</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/contact/index.html</loc>
+    <loc>https://gzthss.com/contact/index.html</loc>
     
     <lastmod>2025-05-10</lastmod>
     
@@ -102,7 +102,7 @@
   
 
   <url>
-    <loc>https://gzthss.github.io/</loc>
+    <loc>https://gzthss.com/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -110,112 +110,112 @@
 
   
   <url>
-    <loc>https://gzthss.github.io/tags/centos/</loc>
+    <loc>https://gzthss.com/tags/centos/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/openssl/</loc>
+    <loc>https://gzthss.com/tags/openssl/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/FastAPI/</loc>
+    <loc>https://gzthss.com/tags/FastAPI/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/SQLAlchemy/</loc>
+    <loc>https://gzthss.com/tags/SQLAlchemy/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/JWT/</loc>
+    <loc>https://gzthss.com/tags/JWT/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/Async/</loc>
+    <loc>https://gzthss.com/tags/Async/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/httpx/</loc>
+    <loc>https://gzthss.com/tags/CentOS/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/asyncio/</loc>
+    <loc>https://gzthss.com/tags/Python/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/Postgresql/</loc>
+    <loc>https://gzthss.com/tags/httpx/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/Python/</loc>
+    <loc>https://gzthss.com/tags/asyncio/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/Backend/</loc>
+    <loc>https://gzthss.com/tags/Postgresql/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/yt-dlp/</loc>
+    <loc>https://gzthss.com/tags/Backend/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/YouTube/</loc>
+    <loc>https://gzthss.com/tags/yt-dlp/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/Web-Development/</loc>
+    <loc>https://gzthss.com/tags/YouTube/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/API/</loc>
+    <loc>https://gzthss.com/tags/Web-Development/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/tags/CentOS/</loc>
+    <loc>https://gzthss.com/tags/API/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -224,21 +224,21 @@
 
   
   <url>
-    <loc>https://gzthss.github.io/categories/Web-Development/</loc>
+    <loc>https://gzthss.com/categories/Web-Development/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/categories/Web-Development/Python/</loc>
+    <loc>https://gzthss.com/categories/Web-Development/Python/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.github.io/categories/Web-Development/Python/FastAPI/</loc>
+    <loc>https://gzthss.com/categories/Web-Development/Python/FastAPI/</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
