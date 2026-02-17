@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://gzthss.com/2025/05/10/%E2%80%8BStep-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/</loc>
+    <loc>https://gzthss.com/2025/05/10/Step-by-Step-Guide-to-Installing-Python-3-10-on-CentOS-7/</loc>
     
     <lastmod>2025-11-20</lastmod>
     
@@ -103,120 +103,120 @@
 
   <url>
     <loc>https://gzthss.com/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://gzthss.com/tags/centos/</loc>
-    <lastmod>2025-11-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.com/tags/openssl/</loc>
-    <lastmod>2025-11-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gzthss.com/tags/FastAPI/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/tags/SQLAlchemy/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/tags/JWT/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/tags/Async/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.com/tags/httpx/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <loc>https://gzthss.com/tags/centos/</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gzthss.com/tags/asyncio/</loc>
-    <lastmod>2025-11-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.com/tags/Postgresql/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <loc>https://gzthss.com/tags/openssl/</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/tags/Python/</loc>
-    <lastmod>2025-11-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.com/tags/Backend/</loc>
-    <lastmod>2025-11-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gzthss.com/tags/CentOS/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/tags/yt-dlp/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/tags/YouTube/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/tags/Web-Development/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/tags/API/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.com/tags/httpx/</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.com/tags/asyncio/</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.com/tags/Postgresql/</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.com/tags/Backend/</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gzthss.com/tags/CentOS/</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -225,21 +225,21 @@
   
   <url>
     <loc>https://gzthss.com/categories/Web-Development/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/categories/Web-Development/Python/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://gzthss.com/categories/Web-Development/Python/FastAPI/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
